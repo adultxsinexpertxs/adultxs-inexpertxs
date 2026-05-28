@@ -151,15 +151,15 @@ export default function AdultxsInexpertxs() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const subject = encodeURIComponent(`Nuevo mensaje de ${formData.nombre}`);
-    const body = encodeURIComponent(
-      `Nombre: ${formData.nombre}\nCorreo: ${formData.correo}\n\nMensaje:\n${formData.mensaje}`
-    );
+  const subject = encodeURIComponent(`Nuevo mensaje de ${formData.nombre}`);
+  const body = encodeURIComponent(
+    `Nombre: ${formData.nombre}\nCorreo: ${formData.correo}\n\nMensaje:\n${formData.mensaje}`
+  );
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  };
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+};
 
   return (
     <>
@@ -355,7 +355,57 @@ export default function AdultxsInexpertxs() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="border border-white bg-white p-8 text-black md:p-10">
+            <form
+  <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  className="border border-white bg-white p-8 text-black md:p-10"
+>
+  <input type="hidden" name="access_key" value="f557396b-07a3-479c-89f6-69012c3a9aee" />
+
+  <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
+    Nombre
+
+    <input
+      required
+      type="text"
+      name="name"
+      className="border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
+      placeholder="Tu nombre"
+    />
+  </label>
+
+  <label className="grid gap-3 text-xl uppercase tracking-[0.12em] mt-8">
+    Correo
+
+    <input
+      required
+      type="email"
+      name="email"
+      className="border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
+      placeholder="tu@correo.com"
+    />
+  </label>
+
+  <label className="grid gap-3 text-xl uppercase tracking-[0.12em] mt-8">
+    Mensaje
+
+    <textarea
+      required
+      name="message"
+      rows={7}
+      className="resize-none border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
+      placeholder="Cuéntanos qué traes entre manos"
+    />
+  </label>
+
+  <button
+    type="submit"
+    className="mt-10 w-full bg-black px-8 py-5 text-center text-xl uppercase tracking-[0.25em] text-white transition hover:bg-neutral-800"
+  >
+    Enviar mensaje
+  </button>
+</form>
               <div className="grid gap-7">
                 <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
                   Nombre
