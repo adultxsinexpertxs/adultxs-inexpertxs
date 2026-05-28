@@ -1,4 +1,3 @@
-import { useState } from "react";
 
 const bebasFont = {
   fontFamily: '"Bebas Neue", sans-serif',
@@ -139,27 +138,7 @@ function LogoMark({ small = false }) {
 }
 
 export default function AdultxsInexpertxs() {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    correo: "",
-    mensaje: "",
-  });
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((current) => ({ ...current, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-  event.preventDefault();
-
-  const subject = encodeURIComponent(`Nuevo mensaje de ${formData.nombre}`);
-  const body = encodeURIComponent(
-    `Nombre: ${formData.nombre}\nCorreo: ${formData.correo}\n\nMensaje:\n${formData.mensaje}`
-  );
-
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-};
+  
 
   return (
     <>
@@ -405,54 +384,6 @@ export default function AdultxsInexpertxs() {
     Enviar mensaje
   </button>
 </form>
-              <div className="grid gap-7">
-                <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
-                  Nombre
-                  <input
-                    required
-                    type="text"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    className="border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
-                    placeholder="Tu nombre"
-                  />
-                </label>
-
-                <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
-                  Correo
-                  <input
-                    required
-                    type="email"
-                    name="correo"
-                    value={formData.correo}
-                    onChange={handleChange}
-                    className="border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
-                    placeholder="tu@correo.com"
-                  />
-                </label>
-
-                <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
-                  Mensaje
-                  <textarea
-                    required
-                    name="mensaje"
-                    value={formData.mensaje}
-                    onChange={handleChange}
-                    rows={7}
-                    className="resize-none border border-black bg-white px-5 py-4 text-2xl outline-none transition focus:bg-black focus:text-white"
-                    placeholder="Cuéntanos qué traes entre manos"
-                  />
-                </label>
-
-                <button
-                  type="submit"
-                  className="bg-black px-8 py-5 text-xl font-black uppercase tracking-[0.18em] text-white transition hover:bg-black/80"
-                >
-                  Enviar mensaje
-                </button>
-              </div>
-            </form>
           </div>
         </section>
 
