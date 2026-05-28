@@ -1,1 +1,33 @@
 @import "tailwindcss";
+@keyframes productFront {
+  0%, 45% {
+    opacity: 1;
+  }
+
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes productBack {
+  0%, 45% {
+    opacity: 0;
+  }
+
+  50%, 100% {
+    opacity: 1;
+  }
+}
+
+.animate-productFront,
+.animate-productBack {
+  animation-play-state: paused;
+}
+
+.group:hover .animate-productFront {
+  animation: productFront 1.8s infinite;
+}
+
+.group:hover .animate-productBack {
+  animation: productBack 1.8s infinite;
+}
