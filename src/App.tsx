@@ -356,7 +356,6 @@ export default function AdultxsInexpertxs() {
             </div>
 
             <form
-  <form
   action="https://api.web3forms.com/submit"
   method="POST"
   className="border border-white bg-white p-8 text-black md:p-10"
