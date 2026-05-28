@@ -302,11 +302,19 @@ export default function AdultxsInexpertxs() {
                   key={item.titulo}
                   className="min-w-[82%] snap-start border border-black p-8 transition hover:bg-black hover:text-white sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
                 >
-                  <div className="aspect-[4/5] w-full overflow-hidden border border-black/20 bg-black/[0.04]">
-                    <div className="grid h-full w-full place-items-center text-sm uppercase tracking-[0.18em] text-black/35">
-                      Foto Producto
-                    </div>
-                  </div>
+                  <div className="group relative aspect-[4/5] w-full overflow-hidden border border-black/20 bg-black/[0.04]">
+  <img
+    src={`/${item.titulo.toLowerCase()}-frente.png`}
+    alt={`${item.titulo} frente`}
+    className="absolute inset-0 h-full w-full object-cover animate-productFront"
+  />
+
+  <img
+    src={`/${item.titulo.toLowerCase()}-vuelta.png`}
+    alt={`${item.titulo} vuelta`}
+    className="absolute inset-0 h-full w-full object-cover animate-productBack"
+  />
+</div>
 
                   <h3 className="mt-8 text-4xl font-black uppercase leading-tight">
                     {item.titulo}
@@ -341,12 +349,11 @@ export default function AdultxsInexpertxs() {
 >
   <input type="hidden" name="access_key" value="f557396b-07a3-479c-89f6-69012c3a9aee" />
 
-  <input type="hidden" name="access_key" value="..." />
 
 <input
   type="hidden"
   name="redirect"
-  value="https://adultxsinexpertxs.vercel.app/#contacto"
+  value="https://adultxsinexpertxs.vercel.app/"
 />
 
   <label className="grid gap-3 text-xl uppercase tracking-[0.12em]">
