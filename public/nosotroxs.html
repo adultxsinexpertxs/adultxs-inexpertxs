@@ -145,6 +145,91 @@ footer{
   }
 
 }
+.nosotrxs-page{
+  background:#fff;
+  color:#000;
+  padding:120px 40px 100px;
+  font-family:'Bebas Neue', sans-serif;
+}
+
+.nosotrxs-container{
+  max-width:1400px;
+  margin:auto;
+}
+
+.section-label{
+  font-size:18px;
+  letter-spacing:.45em;
+  text-transform:uppercase;
+  margin-bottom:60px;
+}
+
+.nosotrxs-title{
+  max-width:950px;
+  font-size:clamp(4.5rem,8vw,8.5rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.nosotrxs-text{
+  margin-top:70px;
+  max-width:900px;
+  font-size:clamp(1.5rem,2vw,2rem);
+  line-height:1.2;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.65);
+}
+
+.team-title{
+  margin-top:80px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(0,0,0,.15);
+  font-size:3rem;
+  text-transform:uppercase;
+}
+
+.team-grid{
+  margin-top:40px;
+  display:flex;
+  gap:60px;
+  overflow-x:auto;
+}
+
+.team-card{
+  min-width:320px;
+}
+
+.photo{
+  width:110px;
+  height:110px;
+  border:1px solid rgba(0,0,0,.25);
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  color:rgba(0,0,0,.35);
+  letter-spacing:.18em;
+}
+
+.team-card span{
+  display:block;
+  margin-top:-70px;
+  margin-left:260px;
+  font-size:2rem;
+  color:rgba(0,0,0,.25);
+}
+
+.team-card h3{
+  margin-top:90px;
+  font-size:2.5rem;
+  text-transform:uppercase;
+}
+
+.team-card p{
+  margin-top:12px;
+  font-size:1.3rem;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+}
 </style>
 
 </head>
@@ -168,85 +253,45 @@ footer{
   </nav>
 </header>
 
-<section style="background:#fff;color:#000;padding:140px 40px 100px;min-height:100vh;">
+<section class="nosotrxs-page">
+  <div class="nosotrxs-container">
 
-  <div style="max-width:1400px;margin:auto;">
+    <p class="section-label">Nosotrxs</p>
 
-```
-<p style="margin-bottom:40px;font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:.45em;">
-  Nosotrxs
-</p>
+    <h1 class="nosotrxs-title">
+      Expertos de nada, brillantes en todo.
+    </h1>
 
-<h1 style="max-width:1100px;font-size:clamp(4rem,8vw,8rem);line-height:1.02;font-weight:900;text-transform:uppercase;">
-  Expertos de nada, brillantes en todo.
-</h1>
+    <p class="nosotrxs-text">
+      Somos una comunidad creativa que abraza el caos de crecer, aprender y experimentar.
+    </p>
 
-<p style="margin-top:50px;max-width:900px;font-size:2rem;line-height:1.4;color:rgba(0,0,0,.7);">
-  Somos una comunidad creativa que abraza el caos de crecer, aprender y experimentar.
-</p>
+    <h2 class="team-title">Conoce a los inexpertxs</h2>
 
-<div style="margin-top:80px;border-bottom:1px solid rgba(0,0,0,.15);padding-bottom:30px;">
-  <h2 style="font-size:3rem;font-weight:900;text-transform:uppercase;">
-    Conoce a los inexpertxs
-  </h2>
-</div>
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="photo">Foto</div>
+        <span>01</span>
+        <h3>Alan de la Paz</h3>
+        <p>Producción audiovisual</p>
+      </article>
 
-<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <article class="team-card">
+        <div class="photo">Foto</div>
+        <span>02</span>
+        <h3>Marco Mendo</h3>
+        <p>Fotografía</p>
+      </article>
 
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">01</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Alan de la Paz</h3>
-    <p style="opacity:.7;">Producción audiovisual</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">02</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Marco Mendo</h3>
-    <p style="opacity:.7;">Fotografía</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">03</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Daniel Lorenzana</h3>
-    <p style="opacity:.7;">Creatividad</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">04</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Sergio Canto</h3>
-    <p style="opacity:.7;">Desarrollador web</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">05</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Andrea Cejudo</h3>
-    <p style="opacity:.7;">Publicidad y estrategia</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">06</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Fernanda Cueto</h3>
-    <p style="opacity:.7;">Diseño</p>
-  </div>
-
-  <div style="border:1px solid #000;padding:30px;">
-    <span style="font-size:3rem;opacity:.3;">07</span>
-    <h3 style="margin-top:20px;font-size:2.4rem;">Sofia Ramos</h3>
-    <p style="opacity:.7;">Medios</p>
-  </div>
-
-</div>
-
-<div style="margin-top:60px;display:flex;justify-content:center;">
-  <a href="/contactanos.html"
-     style="background:#000;color:#fff;padding:18px 42px;text-transform:uppercase;letter-spacing:.18em;">
-    Contáctanos
-  </a>
-</div>
-```
+      <article class="team-card">
+        <div class="photo">Foto</div>
+        <span>03</span>
+        <h3>Daniel Lorenzana</h3>
+        <p>Creatividad</p>
+      </article>
+    </div>
 
   </div>
-
 </section>
 
 <footer>
