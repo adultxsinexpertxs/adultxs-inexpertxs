@@ -72,25 +72,43 @@ export default function AdultxsInexpertxs() {
         </section>
 
         <footer className="border-t border-white/10 bg-black px-6 py-10 lg:px-10">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
-            <a href="/" aria-label="Volver al inicio">
-              <LogoMark small />
-            </a>
+  <div className="mx-auto grid max-w-7xl grid-cols-3 items-center">
+    <a
+      href="/aviso-privacidad.html"
+      className="justify-self-start text-sm uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
+    >
+      Aviso de Privacidad
+    </a>
 
-            <p className="text-sm uppercase tracking-[0.18em] text-white/55">
-              © 2026 Adultxs Inexpertxs. Todos los derechos reservados.
-            </p>
+    <p className="justify-self-center text-sm uppercase tracking-[0.18em] text-white/55">
+      © 2026 Adultxs Inexpertxs
+    </p>
 
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
-            >
-              Instagram
-            </a>
-          </div>
-        </footer>
+    <a
+      href="https://www.instagram.com/adultxs_inexpertxs/"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Instagram"
+      className="justify-self-end text-white/70 transition hover:text-white"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="18" cy="6" r="1" />
+      </svg>
+    </a>
+  </div>
+</footer>
       </main>
     </>
   );
