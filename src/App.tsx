@@ -298,30 +298,40 @@ export default function AdultxsInexpertxs() {
 
             <div className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {cositas.map((item) => (
-                <article
-                  key={item.titulo}
-                  className="min-w-[82%] snap-start border border-black p-8 transition hover:bg-black hover:text-white sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
-                >
-                  <div className="group relative aspect-[4/5] w-full overflow-hidden border border-black/20 bg-black/[0.04]">
-  <img
-    src={`/${item.titulo.toLowerCase()}-frente.png`}
-    alt={`${item.titulo} frente`}
-    className="absolute inset-0 h-full w-full object-cover animate-productFront"
-  />
+  <a
+    key={item.titulo}
+    href={`/${item.titulo.toLowerCase()}.html`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="min-w-[82%] snap-start sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
+  >
+    <article
+      className="h-full border border-black p-8 transition hover:bg-black hover:text-white"
+    >
+      <div className="group relative aspect-[4/5] w-full overflow-hidden border border-black/20 bg-black/[0.04]">
+        <img
+          src={`/${item.titulo.toLowerCase()}-frente.png`}
+          alt={`${item.titulo} frente`}
+          className="absolute inset-0 h-full w-full object-cover animate-productFront"
+        />
 
-  <img
-    src={`/${item.titulo.toLowerCase()}-vuelta.png`}
-    alt={`${item.titulo} vuelta`}
-    className="absolute inset-0 h-full w-full object-cover animate-productBack"
-  />
-</div>
+        <img
+          src={`/${item.titulo.toLowerCase()}-vuelta.png`}
+          alt={`${item.titulo} vuelta`}
+          className="absolute inset-0 h-full w-full object-cover animate-productBack"
+        />
+      </div>
 
-                  <h3 className="mt-8 text-4xl font-black uppercase leading-tight">
-                    {item.titulo}
-                  </h3>
-                  <p className="mt-10 text-lg leading-relaxed opacity-70">{item.texto}</p>
-                </article>
-              ))}
+      <h3 className="mt-8 text-4xl font-black uppercase leading-tight">
+        {item.titulo}
+      </h3>
+
+      <p className="mt-10 text-lg leading-relaxed opacity-70">
+        {item.texto}
+      </p>
+    </article>
+  </a>
+))}
             </div>
           </div>
         </section>
