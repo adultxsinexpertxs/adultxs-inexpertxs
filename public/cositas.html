@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cositas | Adultxs Inexpertxs</title>
+
+<link rel="icon" type="image/png" href="/A_I-04.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Bebas Neue',sans-serif;
+  background:#fff;
+  color:#000;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  background:rgba(0,0,0,.92);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+nav{
+  max-width:1400px;
+  margin:auto;
+  padding:12px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav img{
+  width:55px;
+}
+
+.menu{
+  display:flex;
+  gap:40px;
+  color:white;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:15px;
+}
+
+.catalogo{
+  padding:140px 40px 100px;
+}
+
+.container{
+  max-width:1400px;
+  margin:auto;
+}
+
+.label{
+  font-size:18px;
+  letter-spacing:.45em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin-top:50px;
+  font-size:clamp(5rem,10vw,10rem);
+  line-height:.9;
+  text-transform:uppercase;
+}
+
+.descripcion{
+  margin-top:50px;
+  max-width:900px;
+  font-size:2rem;
+  color:rgba(0,0,0,.6);
+  line-height:1.2;
+}
+
+.productos{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+}
+
+.producto{
+  border:1px solid rgba(0,0,0,.15);
+  padding:20px;
+  transition:.3s;
+}
+
+.producto:hover{
+  transform:translateY(-6px);
+}
+
+.producto img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+
+.producto h2{
+  margin-top:20px;
+  font-size:3rem;
+  text-transform:uppercase;
+}
+
+.producto p{
+  margin-top:15px;
+  color:rgba(0,0,0,.6);
+  font-size:1.4rem;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#000;
+  color:#fff;
+  padding:14px 28px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+
+footer{
+  background:#000;
+  color:#fff;
+  padding:30px 40px;
+}
+
+.footer{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.footer img{
+  width:55px;
+}
+
+@media(max-width:900px){
+
+  .menu{
+    display:none;
+  }
+
+  .catalogo{
+    padding:120px 24px 80px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <nav>
+
+    <a href="/">
+      <img src="/A_I-04.png" alt="Adultxs Inexpertxs">
+    </a>
+
+    <div class="menu">
+      <a href="/nosotroxs.html">Nosotrxs</a>
+      <a href="/colaboraciones.html">Colaboraciones</a>
+      <a href="/cositas.html">Cositas</a>
+      <a href="/contactanos.html">Contáctanos</a>
+    </div>
+
+  </nav>
+
+</header>
+
+<section class="catalogo">
+
+  <div class="container">
+
+    <p class="label">Cositas</p>
+
+    <h1>
+      Cositas para sobrevivir la adultez.
+    </h1>
+
+    <p class="descripcion">
+      Productos cuidadosamente diseñados para acompañarte en esta aventura llamada existir.
+    </p>
+
+    <div class="productos">
+
+      <a class="producto" href="/sudadera.html">
+
+        <img src="/sudadera-frente.png" alt="Sudadera">
+
+        <h2>Sudadera</h2>
+
+        <p>
+          Prenda de soporte emocional para esos días complicados donde existir ya cuenta como productividad.
+        </p>
+
+        <span class="btn">
+          Ver producto
+        </span>
+
+      </a>
+
+      <a class="producto" href="/playera.html">
+
+        <img src="/playera-frente.png" alt="Playera">
+
+        <h2>Playera</h2>
+
+        <p>
+          Básica, negra, cómoda, pero sobretodo útil para comunicarle al mundo que te uniste al club.
+        </p>
+
+        <span class="btn">
+          Ver producto
+        </span>
+
+      </a>
+
+      <a class="producto" href="/gorra.html">
+
+        <img src="/gorra-frente.png" alt="Gorra">
+
+        <h2>Gorra</h2>
+
+        <p>
+          Ideal para ocultar ojeras, pensamientos intrusivos y encuentros inesperados.
+        </p>
+
+        <span class="btn">
+          Ver producto
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="footer">
+
+    <a href="/">
+      <img src="/A_I-04.png" alt="Adultxs Inexpertxs">
+    </a>
+
+    <span>
+      © 2026 Adultxs Inexpertxs
+    </span>
+
+    <a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank">
+      Instagram
+    </a>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
