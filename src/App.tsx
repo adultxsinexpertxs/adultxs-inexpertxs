@@ -81,7 +81,7 @@ export default function AdultxsInexpertxs() {
     </a>
 
     <p className="justify-self-center text-sm uppercase tracking-[0.18em] text-white/55">
-      © 2026 Adultxs Inexpertxs
+      © 2026 ADULTXS TEST
     </p>
 
     <a
