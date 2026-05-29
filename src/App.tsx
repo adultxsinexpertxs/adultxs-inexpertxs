@@ -1,4 +1,4 @@
-const INSTAGRAM_URL = "https://www.instagram.com/adultxs_inexpertxs/";
+
 
 const navItems = [
   { label: "Nosotrxs", href: "/nosotroxs.html" },
