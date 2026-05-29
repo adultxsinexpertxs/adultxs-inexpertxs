@@ -148,10 +148,10 @@ export default function AdultxsInexpertxs() {
         style={bebasFont}
         className="min-h-screen scroll-smooth bg-black text-white selection:bg-white selection:text-black"
       >
-        <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
+        <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
             <a href="#home" aria-label="Ir al inicio" className="group flex items-center gap-3">
-              <LogoMark />
+              <LogoMark small />
             </a>
 
             <div className="hidden items-center gap-10 md:flex">
@@ -170,7 +170,7 @@ export default function AdultxsInexpertxs() {
 
         <section
           id="home"
-          className="relative isolate flex min-h-screen items-center overflow-hidden px-6 pt-28 lg:px-10"
+          className="relative isolate flex min-h-[100svh] items-center px-6 lg:px-16"
         >
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(85,77,32,0.38),transparent_34%),linear-gradient(180deg,#0b0b0b,#000)]" />
 
@@ -195,7 +195,7 @@ export default function AdultxsInexpertxs() {
         </section>
 
         <section id="nosotroxs" className="bg-white px-6 py-28 text-black lg:px-10">
-          <div className="mx-auto max-w-7xl">
+  <div className="mx-auto w-full max-w-[1400px]">
             <p className="mb-10 text-lg font-black uppercase tracking-[0.45em]">Nosotrxs</p>
 
             <h2 className="max-w-5xl text-6xl font-black uppercase leading-[1.02] tracking-tight sm:text-7xl lg:text-8xl">
@@ -217,7 +217,7 @@ export default function AdultxsInexpertxs() {
                 {integrantes.map((p) => (
                   <article
                     key={p.n}
-                    className="min-w-[82%] snap-start border border-black p-8 transition hover:bg-black hover:text-white sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
+                    className="min-w-[90%] snap-start md:min-w-[48%] lg:min-w-[31%]"
                   >
                     <div className="flex items-center justify-between gap-4">
                       <div className="grid h-24 w-24 place-items-center rounded-full border border-black/20 bg-black/[0.04] text-sm uppercase tracking-[0.18em] text-black/35">
@@ -301,8 +301,6 @@ export default function AdultxsInexpertxs() {
   <a
     key={item.titulo}
     href={`/${item.titulo.toLowerCase()}.html`}
-    target="_blank"
-    rel="noopener noreferrer"
     className="min-w-[82%] snap-start sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
   >
     <article
