@@ -36,17 +36,35 @@ export default function AdultxsInexpertxs() {
               <LogoMark small />
             </a>
 
-            <div className="hidden items-center gap-10 md:flex">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-black uppercase tracking-[0.22em] text-white/90 transition hover:text-white hover:underline hover:underline-offset-8"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+            <details className="relative md:hidden">
+  <summary className="cursor-pointer list-none text-sm font-black uppercase tracking-[0.25em] text-white">
+    Menú
+  </summary>
+
+  <div className="absolute right-0 mt-4 grid min-w-56 gap-4 border border-white/20 bg-black p-5 text-right">
+    {navItems.map((item) => (
+      <a
+        key={item.href}
+        href={item.href}
+        className="text-sm font-black uppercase tracking-[0.22em] text-white/90"
+      >
+        {item.label}
+      </a>
+    ))}
+  </div>
+</details>
+
+<div className="hidden items-center gap-10 md:flex">
+  {navItems.map((item) => (
+    <a
+      key={item.href}
+      href={item.href}
+      className="text-sm font-black uppercase tracking-[0.22em] text-white/90 transition hover:text-white hover:underline hover:underline-offset-8"
+    >
+      {item.label}
+    </a>
+  ))}
+</div>
           </nav>
         </header>
 
