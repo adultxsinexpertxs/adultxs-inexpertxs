@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Colaboraciones | Adultxs Inexpertxs</title>
+<link rel="icon" type="image/png" href="/A_I-04.png" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Bebas Neue',sans-serif;background:#000;color:#fff}
+a{text-decoration:none;color:inherit}
+
+header{position:fixed;top:0;width:100%;z-index:999;background:rgba(0,0,0,.92);border-bottom:1px solid rgba(255,255,255,.12)}
+nav{max-width:1400px;margin:auto;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
+nav img{width:55px}
+.menu{display:flex;gap:40px;color:white;text-transform:uppercase;letter-spacing:.18em;font-size:15px}
+
+.colaboraciones{min-height:100vh;padding:120px 5vw 80px}
+.container{max-width:1500px;margin:auto}
+
+.label{font-size:22px;letter-spacing:.45em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+h1{
+  margin-top:55px;
+  max-width:1250px;
+  font-size:clamp(5rem,8vw,9rem);
+  line-height:.92;
+  text-transform:uppercase;
+}
+
+.grid{
+  margin-top:110px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:34px;
+}
+
+.card{
+  min-height:310px;
+  border:1px solid rgba(255,255,255,.25);
+  padding:48px 44px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transition:.3s;
+}
+
+.card:hover{
+  background:#fff;
+  color:#000;
+  transform:translateY(-6px);
+}
+
+.card h2{
+  font-size:3rem;
+  text-transform:uppercase;
+}
+
+.card p{
+  max-width:420px;
+  font-size:1.45rem;
+  line-height:1.25;
+  color:rgba(255,255,255,.65);
+  text-transform:uppercase;
+}
+
+.card:hover p{
+  color:rgba(0,0,0,.65);
+}
+
+footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
+.footer{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.footer img{width:55px}
+
+@media(max-width:900px){
+  .menu{display:none}
+  .colaboraciones{padding:120px 24px 70px}
+  .grid{grid-template-columns:1fr;margin-top:60px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="/"><img src="/A_I-04.png" alt="Adultxs Inexpertxs"></a>
+<div class="menu">
+<a href="/nosotroxs.html">Nosotrxs</a>
+<a href="/colaboraciones.html">Colaboraciones</a>
+<a href="/cositas.html">Cositas</a>
+<a href="/contactanos.html">Contáctanos</a>
+</div>
+</nav>
+</header>
+
+<section class="colaboraciones">
+<div class="container">
+
+<p class="label">Colaboraciones</p>
+
+<h1>
+Nos juntamos con gente que trae algo raro, útil o brillante.
+</h1>
+
+<div class="grid">
+
+<a class="card" href="https://instagram.com" target="_blank">
+  <h2>Verde MX</h2>
+  <p>Que buscan ideas con filo, estrategia y cero solemnidad innecesaria.</p>
+</a>
+
+<a class="card" href="https://instagram.com" target="_blank">
+  <h2>La Redención</h2>
+  <p>Que buscan ideas con filo, estrategia y cero solemnidad innecesaria.</p>
+</a>
+
+<a class="card" href="https://instagram.com" target="_blank">
+  <h2>Mala Kaffe</h2>
+  <p>Que buscan ideas con filo, estrategia y cero solemnidad innecesaria.</p>
+</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="footer">
+<a href="/"><img src="/A_I-04.png" alt="Adultxs Inexpertxs"></a>
+<span>© 2026 Adultxs Inexpertxs</span>
+<a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank">Instagram</a>
+</div>
+</footer>
+
+</body>
+</html>
