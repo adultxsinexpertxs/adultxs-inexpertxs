@@ -96,6 +96,46 @@ footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
   .colaboraciones{padding:120px 24px 70px}
   .grid{grid-template-columns:1fr;margin-top:60px}
 }
+.mobile-menu{
+  display:none;
+}
+
+@media (max-width:768px){
+
+  .menu{
+    display:none;
+  }
+
+  .mobile-menu{
+    display:block;
+  }
+
+  .mobile-menu summary{
+    list-style:none;
+    cursor:pointer;
+    color:white;
+    font-size:14px;
+    letter-spacing:.2em;
+  }
+
+  .mobile-links{
+    position:absolute;
+    right:20px;
+    top:70px;
+    background:#000;
+    border:1px solid rgba(255,255,255,.15);
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .mobile-links a{
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:.15em;
+  }
+}
 </style>
 </head>
 
@@ -104,6 +144,19 @@ footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
 <header>
 <nav>
 <a href="/"><img src="/A_I-04.png" alt="Adultxs Inexpertxs"></a>
+<div class="mobile-menu">
+  <details>
+    <summary>MENÚ</summary>
+
+    <div class="mobile-links">
+      <a href="/nosotroxs.html">Nosotrxs</a>
+      <a href="/colaboraciones.html">Colaboraciones</a>
+      <a href="/cositas.html">Cositas</a>
+      <a href="/contactanos.html">Contáctanos</a>
+    </div>
+  </details>
+</div>
+
 <div class="menu">
   <a href="/nosotroxs.html">Nosotrxs</a>
   <a href="/colaboraciones.html">Colaboraciones</a>
