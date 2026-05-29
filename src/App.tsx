@@ -1,4 +1,4 @@
-
+import { useEffect } from "react";
 const bebasFont = {
   fontFamily: '"Bebas Neue", sans-serif',
 };
@@ -37,10 +37,10 @@ function InstagramIcon({ size = 28 }) {
 }
 
 const navItems = [
-  { label: "Nosotrxs", href: "#nosotroxs" },
-  { label: "Colaboraciones", href: "#colaboraciones" },
-  { label: "Cositas", href: "#cositas" },
-  { label: "Contáctanos", href: "#contactanos" },
+  { label: "Nosotrxs", href: "/#nosotroxs" },
+  { label: "Colaboraciones", href: "/#colaboraciones" },
+  { label: "Cositas", href: "/#cositas" },
+  { label: "Contáctanos", href: "/#contactanos" },
 ];
 
 const integrantes = [
@@ -138,7 +138,29 @@ function LogoMark({ small = false }) {
 }
 
 export default function AdultxsInexpertxs() {
-  
+
+  useEffect(() => {
+  const scrollToHash = () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    setTimeout(() => {
+      const element = document.querySelector(hash);
+      if (element) {
+        const y = element.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 800);
+  };
+
+  scrollToHash();
+
+  window.addEventListener("hashchange", scrollToHash);
+
+  return () => {
+    window.removeEventListener("hashchange", scrollToHash);
+  };
+}, []);
 
   return (
     <>
@@ -301,7 +323,7 @@ export default function AdultxsInexpertxs() {
   <a
     key={item.titulo}
     href={`/${item.titulo.toLowerCase()}.html`}
-    className="min-w-[82%] snap-start sm:min-w-[48%] lg:min-w-[calc((100%-3rem)/3)]"
+    className="min-w-[90%] snap-start md:min-w-[48%] lg:min-w-[31%]"
   >
     <article
       className="h-full border border-black p-8 transition hover:bg-black hover:text-white"
