@@ -26,8 +26,82 @@
     .footer{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center}
     .footer img{width:55px}
     @media(max-width:900px){.product{grid-template-columns:1fr}.images{grid-template-columns:1fr}nav div{display:none}}
+    .gallery{
+  position:relative;
+  width:100%;
+  border:1px solid rgba(255,255,255,.25);
+  overflow:hidden;
+}
+
+.gallery img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  cursor:zoom-in;
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  background:#fff;
+  color:#000;
+  border:none;
+  width:48px;
+  height:48px;
+  font-size:2rem;
+  cursor:pointer;
+}
+
+.left{
+  left:15px;
+}
+
+.right{
+  right:15px;
+}
+
+.zoom-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+}
+
+.zoom-modal img{
+  max-width:90vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+
+.zoom-modal.active{
+  display:flex;
+}
   </style>
 </head>
+
+<script>
+  const images = ["/playera-frente.png", "/playera-vuelta.png"];
+  let currentImage = 0;
+
+  function changeImage(direction) {
+    currentImage = (currentImage + direction + images.length) % images.length;
+    document.getElementById("mainImage").src = images[currentImage];
+    document.getElementById("zoomImage").src = images[currentImage];
+  }
+
+  function openZoom() {
+    document.getElementById("zoomModal").classList.add("active");
+  }
+
+  function closeZoom() {
+    document.getElementById("zoomModal").classList.remove("active");
+  }
+</script>
 
 <body>
   <header>
@@ -44,10 +118,17 @@
 
   <main>
     <section class="product">
-      <div class="images">
-        <img src="/playera-frente.png" alt="Playera frente">
-        <img src="/playera-vuelta.png" alt="Playera vuelta">
-      </div>
+      <div class="gallery">
+  <button class="arrow left" onclick="changeImage(-1)">‹</button>
+
+  <img id="mainImage" src="/playera-frente.png" alt="Playera" onclick="openZoom()">
+
+  <button class="arrow right" onclick="changeImage(1)">›</button>
+</div>
+
+<div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
+  <img id="zoomImage" src="/playera-frente.png" alt="Playera zoom">
+</div>
 
       <div>
         <h1>Playera</h1>
