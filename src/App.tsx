@@ -37,10 +37,22 @@ function InstagramIcon({ size = 28 }) {
 }
 
 const navItems = [
-  { label: "Nosotrxs", href: "/#nosotroxs" },
-  { label: "Colaboraciones", href: "/#colaboraciones" },
-  { label: "Cositas", href: "/#cositas" },
-  { label: "Contáctanos", href: "/#contactanos" },
+  {
+    label: "Nosotrxs",
+    href: "/nosotroxs.html",
+  },
+  {
+    label: "Colaboraciones",
+    href: "/colaboraciones.html",
+  },
+  {
+    label: "Cositas",
+    href: "/cositas.html",
+  },
+  {
+    label: "Contáctanos",
+    href: "/contactanos.html",
+  },
 ];
 
 const integrantes = [
