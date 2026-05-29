@@ -172,6 +172,53 @@ footer{
   }
 
 }
+.product-image-loop{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#f3f3f3;
+}
+
+.product-image-loop img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.front-img{
+  animation:frontLoop 3s infinite;
+}
+
+.back-img{
+  animation:backLoop 3s infinite;
+}
+
+@keyframes frontLoop{
+  0%,45%{
+    opacity:1;
+  }
+  50%,95%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+@keyframes backLoop{
+  0%,45%{
+    opacity:0;
+  }
+  50%,95%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
+}
 
 </style>
 </head>
@@ -211,7 +258,10 @@ footer{
 
       <a class="producto" href="/sudadera.html">
 
-        <img src="/sudadera-frente.png" alt="Sudadera">
+       <div class="product-image-loop">
+  <img class="front-img" src="/sudadera-frente.png" alt="Sudadera frente">
+  <img class="back-img" src="/sudadera-vuelta.png" alt="Sudadera vuelta">
+</div>
 
         <h2>Sudadera</h2>
 
@@ -227,7 +277,10 @@ footer{
 
       <a class="producto" href="/playera.html">
 
-        <img src="/playera-frente.png" alt="Playera">
+        <div class="product-image-loop">
+  <img class="front-img" src="/playera-frente.png" alt="Playera frente">
+  <img class="back-img" src="/playera-vuelta.png" alt="Playera vuelta">
+</div>
 
         <h2>Playera</h2>
 
@@ -243,7 +296,10 @@ footer{
 
       <a class="producto" href="/gorra.html">
 
-        <img src="/gorra-frente.png" alt="Gorra">
+        <div class="product-image-loop">
+  <img class="front-img" src="/gorra-frente.png" alt="Gorra frente">
+  <img class="back-img" src="/gorra-vuelta.png" alt="Gorra vuelta">
+</div>
 
         <h2>Gorra</h2>
 
