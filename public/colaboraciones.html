@@ -16,6 +16,7 @@ header{position:fixed;top:0;width:100%;z-index:999;background:rgba(0,0,0,.92);bo
 nav{max-width:1400px;margin:auto;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
 nav img{width:55px}
 .menu{display:flex;gap:40px;color:white;text-transform:uppercase;letter-spacing:.18em;font-size:15px}
+.mobile-menu{display:none}
 
 .colaboraciones{min-height:100vh;padding:120px 5vw 80px}
 .container{max-width:1500px;margin:auto}
@@ -70,6 +71,19 @@ h1{
   color:rgba(0,0,0,.65);
 }
 
+.mensaje-final{
+  max-width:1200px;
+  margin:80px auto 20px;
+  text-align:center;
+}
+
+.mensaje-final p{
+  font-size:1.5rem;
+  line-height:1.4;
+  color:rgba(255,255,255,.65);
+  text-transform:uppercase;
+}
+
 footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
 .footer{
   max-width:1400px;
@@ -79,41 +93,19 @@ footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
   align-items:center;
 }
 
-.footer a:first-child{
-  justify-self:start;
-}
-
-.footer span{
-  justify-self:center;
-}
-
-.footer a:last-child{
-  justify-self:end;
-}
+.footer a:first-child{justify-self:start}
+.footer span{justify-self:center}
+.footer a:last-child{justify-self:end}
 
 @media(max-width:1200px){
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .grid{grid-template-columns:repeat(2,1fr)}
 }
 
 @media(max-width:768px){
-  .menu{
-    display:none;
-  }
-
-  .mobile-menu{
-    display:block;
-  }
-
-  .colaboraciones{
-    padding:120px 24px 70px;
-  }
-
-  .grid{
-    grid-template-columns:1fr;
-    margin-top:60px;
-  }
+  .menu{display:none}
+  .mobile-menu{display:block}
+  .colaboraciones{padding:120px 24px 70px}
+  .grid{grid-template-columns:1fr;margin-top:60px}
 
   .mobile-menu summary{
     list-style:none;
@@ -149,10 +141,10 @@ footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
 <header>
 <nav>
 <a href="/"><img src="/A_I-04.png" alt="Adultxs Inexpertxs"></a>
+
 <div class="mobile-menu">
   <details>
     <summary>MENÚ</summary>
-
     <div class="mobile-links">
       <a href="/nosotroxs.html">Nosotrxs</a>
       <a href="/colaboraciones.html">Colaboraciones</a>
@@ -176,9 +168,7 @@ footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
 
 <p class="label">Colaboraciones</p>
 
-<h1>
-Nos juntamos con gente que trae algo raro, útil o brillante.
-</h1>
+<h1>Nos juntamos con gente que trae algo raro, útil o brillante.</h1>
 
 <div class="grid">
 
@@ -199,67 +189,30 @@ Nos juntamos con gente que trae algo raro, útil o brillante.
 
 <a class="card" href="/mala-kaffe.html">
   <h2>Mala Kaffe</h2>
-  <p>
-    Para quienes necesitan café, pero también un lugar donde las ideas fluyan.
-  </p>
+  <p>Para quienes necesitan café, pero también un lugar donde las ideas fluyan.</p>
 </a>
-
-</div>
 
 </div>
 
 <div class="mensaje-final">
   <p>
     Pregunta en cada proyecto por descuentos o promociones participantes.
-    Porque hacer comunidad está chido...
-    y porque a veces todxs necesitamos un apapacho en la vida.
+    Porque hacer comunidad está chido... y porque a veces todxs necesitamos un apapacho en la vida.
   </p>
 </div>
 
+</div>
 </section>
-
-.mensaje-final{
-  margin-top:70px;
-  margin-bottom:70px;
-  text-align:center;
-}
-
-.mensaje-final p{
-  max-width:1200px;
-  margin:auto;
-  font-size:1.5rem;
-  line-height:1.4;
-  color:rgba(255,255,255,.65);
-  text-transform:uppercase;
-}
 
 <footer>
 <div class="footer">
 
-  <a href="/aviso-privacidad.html">
-    Aviso de Privacidad
-  </a>
+  <a href="/aviso-privacidad.html">Aviso de Privacidad</a>
 
-  <span>
-    © 2026 Adultxs Inexpertxs
-  </span>
+  <span>© 2026 Adultxs Inexpertxs</span>
 
-  <a
-    href="https://www.instagram.com/adultxs_inexpertxs/"
-    target="_blank"
-    aria-label="Instagram"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="26"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
+  <a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5"></rect>
       <circle cx="12" cy="12" r="4"></circle>
       <circle cx="18" cy="6" r="1"></circle>
