@@ -4,34 +4,28 @@ import "./CredencialPopup.css";
 export default function CredencialPopup() {
   const [open, setOpen] = useState(true);
 
+  if (!open) return null;
+
   return (
-    <>
-      {open && (
-        <div className="ai-popup-overlay">
-          <div className="ai-popup-box">
-            <button
-  type="button"
-  className="ai-close-btn"
-  onClick={() => {
-    document.querySelector(".ai-popup-overlay")?.remove();
-  }}
-  aria-label="Cerrar popup"
->
-  ×
-</button>
+    <div className="ai-popup-overlay">
+      <div className="ai-popup-box">
+        <button
+          type="button"
+          className="ai-close-btn"
+          onClick={() => setOpen(false)}
+          aria-label="Cerrar popup"
+        >
+          ×
+        </button>
 
-            <h2>¿YA ERES INEXPERTX?</h2>
+        <h2>¿YA ERES INEXPERTX?</h2>
 
-            <p>
-              Genera tu credencial oficial de Adultxs Inexpertxs.
-            </p>
+        <p>Genera tu credencial oficial de Adultxs Inexpertxs.</p>
 
-            <a className="ai-main-link" href="/credencial.html">
-              QUIERO MI CREDENCIAL
-            </a>
-          </div>
-        </div>
-      )}
-    </>
+        <a className="ai-main-link" href="/credencial.html">
+          QUIERO MI CREDENCIAL
+        </a>
+      </div>
+    </div>
   );
 }
