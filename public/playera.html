@@ -1,10 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Playera | Adultxs Inexpertxs</title>
 
 <link rel="icon" type="image/png" href="/A_I-04.png">
@@ -12,112 +10,57 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Bebas Neue',sans-serif}
+a{text-decoration:none;color:inherit}
 
-body{
-  background:#000;
-  color:#fff;
-  font-family:'Bebas Neue',sans-serif;
-}
+header{position:fixed;top:0;width:100%;z-index:999;background:rgba(0,0,0,.95);border-bottom:1px solid rgba(255,255,255,.12)}
+nav{max-width:1400px;margin:auto;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
+nav img{width:55px}
+.menu{display:flex;gap:40px;text-transform:uppercase;letter-spacing:.15em}
+.mobile-menu{display:none}
 
-a{
-  text-decoration:none;
-  color:inherit;
-}
+.producto{min-height:100vh;padding:140px 5vw 80px;display:flex;align-items:center}
+.container{max-width:1500px;width:100%;margin:auto;display:grid;grid-template-columns:.9fr 1fr;gap:80px;align-items:center}
 
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:999;
-  background:rgba(0,0,0,.95);
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-nav{
-  max-width:1400px;
-  margin:auto;
-  padding:12px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-nav img{
-  width:55px;
-}
-
-.menu{
-  display:flex;
-  gap:40px;
-  text-transform:uppercase;
-  letter-spacing:.15em;
-}
-
-.mobile-menu{
-  display:none;
-}
-
-.producto{
-  min-height:100vh;
-  padding:140px 5vw 80px;
-  display:flex;
-  align-items:center;
-}
-
-.container{
-  max-width:1500px;
-  width:100%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:.9fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.galeria{
-  aspect-ratio:4/5;
+.slider{
+  position:relative;
+  border:1px solid rgba(255,255,255,.18);
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.15);
+  background:#111;
 }
 
-.galeria img{
+.slider img{
   width:100%;
-  height:100%;
+  aspect-ratio:4/5;
   object-fit:cover;
+  display:block;
+  cursor:zoom-in;
 }
 
-.label{
-  font-size:20px;
-  letter-spacing:.4em;
-  color:rgba(255,255,255,.5);
-  text-transform:uppercase;
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  border:none;
+  background:rgba(0,0,0,.6);
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  z-index:10;
 }
 
-h1{
-  margin-top:40px;
-  font-size:clamp(5rem,9vw,10rem);
-  line-height:.9;
-  text-transform:uppercase;
-}
+.arrow:hover{background:#fff;color:#000}
+.left{left:10px}
+.right{right:10px}
 
-.descripcion{
-  margin-top:40px;
-  max-width:800px;
-  font-size:clamp(1.7rem,2vw,2.5rem);
-  line-height:1.15;
-  color:rgba(255,255,255,.65);
-  text-transform:uppercase;
-}
+.label{font-size:20px;letter-spacing:.4em;color:rgba(255,255,255,.5);text-transform:uppercase}
+h1{margin-top:40px;font-size:clamp(5rem,9vw,10rem);line-height:.9;text-transform:uppercase}
+.descripcion{margin-top:40px;max-width:800px;font-size:clamp(1.7rem,2vw,2.5rem);line-height:1.15;color:rgba(255,255,255,.65);text-transform:uppercase}
 
-.tallas{
-  margin-top:50px;
-}
-
-.tallas h2{
-  margin-bottom:20px;
-  font-size:2rem;
-  letter-spacing:.18em;
-}
+.tallas{margin-top:50px}
+.tallas h2{margin-bottom:20px;font-size:2rem;letter-spacing:.18em;text-transform:uppercase}
 
 .size-grid{
   display:grid;
@@ -132,6 +75,7 @@ h1{
   text-align:center;
   color:rgba(255,255,255,.4);
   position:relative;
+  cursor:not-allowed;
 }
 
 .size-option strong{
@@ -144,6 +88,7 @@ h1{
   margin-top:6px;
   font-size:.9rem;
   letter-spacing:.15em;
+  text-transform:uppercase;
 }
 
 .size-option::after{
@@ -165,58 +110,45 @@ h1{
   text-transform:uppercase;
 }
 
-.botones{
-  margin-top:45px;
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-}
+.botones{margin-top:45px;display:flex;gap:18px;flex-wrap:wrap}
+.btn{border:1px solid #fff;padding:18px 40px;font-size:1.35rem;letter-spacing:.18em;text-transform:uppercase}
+.btn-primary{background:#fff;color:#000;opacity:.45;cursor:not-allowed;pointer-events:none}
+.btn-secondary:hover{background:#fff;color:#000}
 
-.btn{
-  border:1px solid #fff;
-  padding:18px 40px;
-  font-size:1.35rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-.btn-primary{
-  background:#fff;
-  color:#000;
-  opacity:.45;
-  cursor:not-allowed;
-}
-
-.btn-secondary:hover{
-  background:#fff;
-  color:#000;
-}
-
-footer{
-  border-top:1px solid rgba(255,255,255,.12);
-  padding:30px 40px;
-}
-
-.footer{
-  max-width:1400px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
+.zoom{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.95);
   align-items:center;
+  justify-content:center;
+  padding:30px;
+  cursor:zoom-out;
 }
 
+.zoom.active{display:flex}
+
+.zoom img{
+  max-width:92vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+
+footer{border-top:1px solid rgba(255,255,255,.12);padding:30px 40px}
+.footer{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
 .footer a:first-child{justify-self:start}
 .footer span{justify-self:center}
 .footer a:last-child{justify-self:end}
 
 @media(max-width:900px){
-
   .menu{display:none}
   .mobile-menu{display:block}
 
   .mobile-menu summary{
     cursor:pointer;
     list-style:none;
+    letter-spacing:.15em;
   }
 
   .mobile-links{
@@ -231,13 +163,12 @@ footer{
     gap:15px;
   }
 
-  .container{
-    grid-template-columns:1fr;
-  }
+  .producto{padding:120px 24px 70px}
+  .container{grid-template-columns:1fr;gap:45px}
+  .size-grid{grid-template-columns:repeat(2,1fr)}
 
-  .size-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .footer{grid-template-columns:1fr;gap:20px;text-align:center}
+  .footer a:first-child,.footer span,.footer a:last-child{justify-self:center}
 }
 </style>
 </head>
@@ -246,10 +177,19 @@ footer{
 
 <header>
 <nav>
+<a href="/"><img src="/A_I-04.png" alt="Adultxs Inexpertxs"></a>
 
-<a href="/">
-<img src="/A_I-04.png" alt="Adultxs Inexpertxs">
-</a>
+<div class="mobile-menu">
+<details>
+<summary>MENÚ</summary>
+<div class="mobile-links">
+<a href="/nosotroxs.html">Nosotrxs</a>
+<a href="/colaboraciones.html">Colaboraciones</a>
+<a href="/cositas.html">Cositas</a>
+<a href="/contactanos.html">Contáctanos</a>
+</div>
+</details>
+</div>
 
 <div class="menu">
 <a href="/nosotroxs.html">Nosotrxs</a>
@@ -257,20 +197,26 @@ footer{
 <a href="/cositas.html">Cositas</a>
 <a href="/contactanos.html">Contáctanos</a>
 </div>
-
 </nav>
 </header>
 
 <section class="producto">
-
 <div class="container">
 
-<div class="galeria">
-<img src="/playera-frente.png" alt="Playera Adultxs Inexpertxs">
+<div class="slider">
+<button class="arrow left" onclick="prevImage()">❮</button>
+
+<img
+id="productImage"
+src="/playera-frente.png"
+alt="Playera Adultxs Inexpertxs"
+onclick="openZoom(this.src)"
+>
+
+<button class="arrow right" onclick="nextImage()">❯</button>
 </div>
 
 <div>
-
 <p class="label">Cositas</p>
 
 <h1>Playera</h1>
@@ -280,78 +226,89 @@ Uniforme no oficial para navegar la adultez sin tener idea de lo que estás haci
 </p>
 
 <div class="tallas">
-
-<h2>TALLAS</h2>
+<h2>Tallas</h2>
 
 <div class="size-grid">
-
-<div class="size-option">
-<strong>S</strong>
-<span>AGOTADA</span>
-</div>
-
-<div class="size-option">
-<strong>M</strong>
-<span>AGOTADA</span>
-</div>
-
-<div class="size-option">
-<strong>L</strong>
-<span>AGOTADA</span>
-</div>
-
-<div class="size-option">
-<strong>XL</strong>
-<span>AGOTADA</span>
-</div>
-
+<div class="size-option"><strong>S</strong><span>Agotada</span></div>
+<div class="size-option"><strong>M</strong><span>Agotada</span></div>
+<div class="size-option"><strong>L</strong><span>Agotada</span></div>
+<div class="size-option"><strong>XL</strong><span>Agotada</span></div>
 </div>
 
 <p class="aviso">
-Actualmente todas las tallas se encuentran agotadas.
-Pronto anunciaremos una nueva corrida.
+Actualmente todas las tallas están agotadas. Pronto anunciaremos una nueva corrida.
 </p>
-
 </div>
 
 <div class="botones">
-
-<div class="btn btn-primary">
-AGOTADA
-</div>
-
-<a href="/cositas.html" class="btn btn-secondary">
-BACK A COSITAS
-</a>
-
+<a class="btn btn-primary" href="#">Agotada</a>
+<a href="/cositas.html" class="btn btn-secondary">Back a cositas</a>
 </div>
 
 </div>
 
 </div>
-
 </section>
 
-<footer>
+<div id="zoomModal" class="zoom" onclick="closeZoom()">
+<img id="zoomImage" src="" alt="Vista ampliada">
+</div>
 
+<footer>
 <div class="footer">
 
-<a href="/aviso-privacidad.html">
-Aviso de Privacidad
-</a>
+<a href="/aviso-privacidad.html">Aviso de Privacidad</a>
 
-<span>
-© 2026 Adultxs Inexpertxs
-</span>
+<span>© 2026 Adultxs Inexpertxs</span>
 
-<a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank">
-Instagram
+<a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank" aria-label="Instagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="2" width="20" height="20" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<circle cx="18" cy="6" r="1"/>
+</svg>
 </a>
 
 </div>
-
 </footer>
+
+<script>
+const images = [
+  "/playera-frente.png",
+  "/playera-vuelta.png"
+];
+
+let currentImage = 0;
+
+function nextImage(){
+  currentImage++;
+
+  if(currentImage >= images.length){
+    currentImage = 0;
+  }
+
+  document.getElementById("productImage").src = images[currentImage];
+}
+
+function prevImage(){
+  currentImage--;
+
+  if(currentImage < 0){
+    currentImage = images.length - 1;
+  }
+
+  document.getElementById("productImage").src = images[currentImage];
+}
+
+function openZoom(src){
+  document.getElementById("zoomImage").src = src;
+  document.getElementById("zoomModal").classList.add("active");
+}
+
+function closeZoom(){
+  document.getElementById("zoomModal").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
-```
