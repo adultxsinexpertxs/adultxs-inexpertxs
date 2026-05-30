@@ -1,4 +1,4 @@
-
+import CredencialPopup from "./CredencialPopup";
 
 const navItems = [
   { label: "Nosotrxs", href: "/nosotroxs.html" },
@@ -16,7 +16,9 @@ function LogoMark({ small = false }) {
     <img
       src="/A_I-04.png"
       alt="Adultxs Inexpertxs Logo"
-      className={`${small ? "h-12 w-12" : "h-16 w-16"} object-contain transition duration-300 hover:scale-105`}
+      className={`${
+        small ? "h-12 w-12" : "h-16 w-16"
+      } object-contain transition duration-300 hover:scale-105`}
     />
   );
 }
@@ -30,6 +32,8 @@ export default function AdultxsInexpertxs() {
         style={bebasFont}
         className="min-h-screen bg-black text-white selection:bg-white selection:text-black"
       >
+        <CredencialPopup />
+
         <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
             <a href="/" aria-label="Ir al inicio">
@@ -37,34 +41,34 @@ export default function AdultxsInexpertxs() {
             </a>
 
             <details className="relative md:hidden">
-  <summary className="cursor-pointer list-none text-sm font-black uppercase tracking-[0.25em] text-white">
-    Menú
-  </summary>
+              <summary className="cursor-pointer list-none text-sm font-black uppercase tracking-[0.25em] text-white">
+                Menú
+              </summary>
 
-  <div className="absolute right-0 mt-4 grid min-w-56 gap-4 border border-white/20 bg-black p-5 text-right">
-    {navItems.map((item) => (
-      <a
-        key={item.href}
-        href={item.href}
-        className="text-sm font-black uppercase tracking-[0.22em] text-white/90"
-      >
-        {item.label}
-      </a>
-    ))}
-  </div>
-</details>
+              <div className="absolute right-0 mt-4 grid min-w-56 gap-4 border border-white/20 bg-black p-5 text-right">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm font-black uppercase tracking-[0.22em] text-white/90"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </details>
 
-<div className="hidden items-center gap-10 md:flex">
-  {navItems.map((item) => (
-    <a
-      key={item.href}
-      href={item.href}
-      className="text-sm font-black uppercase tracking-[0.22em] text-white/90 transition hover:text-white hover:underline hover:underline-offset-8"
-    >
-      {item.label}
-    </a>
-  ))}
-</div>
+            <div className="hidden items-center gap-10 md:flex">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-black uppercase tracking-[0.22em] text-white/90 transition hover:text-white hover:underline hover:underline-offset-8"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </nav>
         </header>
 
@@ -77,7 +81,8 @@ export default function AdultxsInexpertxs() {
             </h1>
 
             <p className="mx-auto mt-16 max-w-4xl text-balance text-2xl uppercase text-white/75 md:text-3xl">
-              Un espacio para crear, colaborar y compartir ideas sin pretender tenerlo todo resuelto.
+              Un espacio para crear, colaborar y compartir ideas sin pretender
+              tenerlo todo resuelto.
             </p>
 
             <a
@@ -90,43 +95,43 @@ export default function AdultxsInexpertxs() {
         </section>
 
         <footer className="border-t border-white/10 bg-black px-6 py-10 lg:px-10">
-  <div className="mx-auto grid max-w-7xl grid-cols-3 items-center">
-    <a
-      href="/aviso-privacidad.html"
-      className="justify-self-start text-sm uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
-    >
-      Aviso de Privacidad
-    </a>
+          <div className="mx-auto grid max-w-7xl grid-cols-3 items-center">
+            <a
+              href="/aviso-privacidad.html"
+              className="justify-self-start text-sm uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
+            >
+              Aviso de Privacidad
+            </a>
 
-    <p className="justify-self-center text-sm uppercase tracking-[0.18em] text-white/55">
-      © 2026 Adultxs Inexpertxs
-    </p>
+            <p className="justify-self-center text-sm uppercase tracking-[0.18em] text-white/55">
+              © 2026 Adultxs Inexpertxs
+            </p>
 
-    <a
-      href="https://www.instagram.com/adultxs_inexpertxs/"
-      target="_blank"
-      rel="noreferrer"
-      aria-label="Instagram"
-      className="justify-self-end text-white/70 transition hover:text-white"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="26"
-        height="26"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="2" y="2" width="20" height="20" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="18" cy="6" r="1" />
-      </svg>
-    </a>
-  </div>
-</footer>
+            <a
+              href="https://www.instagram.com/adultxs_inexpertxs/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="justify-self-end text-white/70 transition hover:text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="18" cy="6" r="1" />
+              </svg>
+            </a>
+          </div>
+        </footer>
       </main>
     </>
   );
