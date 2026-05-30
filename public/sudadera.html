@@ -1,29 +1,217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudadera | Adultxs Inexpertxs</title>
-  <link rel="icon" type="image/png" href="/A_I-04.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Bebas Neue',sans-serif;background:#000;color:#fff}
-    a{text-decoration:none;color:inherit}
-    header{position:fixed;top:0;width:100%;z-index:10;background:rgba(0,0,0,.85);border-bottom:1px solid rgba(255,255,255,.15)}
-    nav{max-width:1400px;margin:auto;padding:12px 40px;display:flex;justify-content:space-between;align-items:center}
-    nav img{width:52px}
-    nav div{display:flex;gap:36px;font-size:18px;letter-spacing:.15em}
-    main{padding:150px 40px 90px}
-    .product{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-    .images{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .images img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(255,255,255,.25)}
-    h1{font-size:clamp(5rem,10vw,10rem);line-height:.9;text-transform:uppercase}
-    p{font-size:2rem;line-height:1.2;color:rgba(255,255,255,.7);margin-top:30px}
-    .btn{display:inline-block;margin-top:45px;background:#fff;color:#000;padding:18px 42px;font-size:1.6rem;letter-spacing:.15em;text-transform:uppercase}
-    footer{border-top:1px solid rgba(255,255,255,.15);padding:30px 40px}
-    .footer{
+<title>Sudadera | Adultxs Inexpertxs</title>
+
+<link rel="icon" type="image/png" href="/A_I-04.png">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:#000;
+  color:#fff;
+  font-family:'Bebas Neue',sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:999;
+  background:rgba(0,0,0,.95);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+nav{
+  max-width:1400px;
+  margin:auto;
+  padding:12px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav img{
+  width:55px;
+}
+
+.menu{
+  display:flex;
+  gap:40px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+
+.mobile-menu{
+  display:none;
+}
+
+.producto{
+  min-height:100vh;
+  padding:140px 5vw 80px;
+  display:flex;
+  align-items:center;
+}
+
+.container{
+  max-width:1500px;
+  width:100%;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.9fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.galeria{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/5;
+  border:1px solid rgba(255,255,255,.18);
+  overflow:hidden;
+  background:#111;
+}
+
+.galeria img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.label{
+  font-size:20px;
+  letter-spacing:.4em;
+  color:rgba(255,255,255,.5);
+  text-transform:uppercase;
+}
+
+h1{
+  margin-top:40px;
+  font-size:clamp(5rem,9vw,10rem);
+  line-height:.9;
+  text-transform:uppercase;
+}
+
+.descripcion{
+  margin-top:40px;
+  max-width:800px;
+  font-size:clamp(1.7rem,2vw,2.6rem);
+  line-height:1.15;
+  color:rgba(255,255,255,.65);
+  text-transform:uppercase;
+}
+
+.tallas{
+  margin-top:55px;
+}
+
+.tallas h2{
+  font-size:2rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+.size-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  max-width:520px;
+}
+
+.size-option{
+  border:1px solid rgba(255,255,255,.25);
+  padding:18px;
+  text-align:center;
+  color:rgba(255,255,255,.35);
+  position:relative;
+  cursor:not-allowed;
+}
+
+.size-option strong{
+  display:block;
+  font-size:2rem;
+  color:rgba(255,255,255,.45);
+}
+
+.size-option span{
+  display:block;
+  margin-top:6px;
+  font-size:.95rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+}
+
+.size-option::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  top:50%;
+  height:1px;
+  background:rgba(255,255,255,.35);
+  transform:rotate(-12deg);
+}
+
+.aviso{
+  margin-top:28px;
+  max-width:650px;
+  font-size:1.3rem;
+  line-height:1.4;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;
+}
+
+.botones{
+  margin-top:45px;
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid #fff;
+  padding:18px 38px;
+  font-size:1.35rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:#fff;
+  color:#000;
+  opacity:.45;
+  cursor:not-allowed;
+  pointer-events:none;
+}
+
+.btn-secondary:hover{
+  background:#fff;
+  color:#000;
+}
+
+footer{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:30px 40px;
+}
+
+.footer{
   max-width:1400px;
   margin:auto;
   display:grid;
@@ -31,94 +219,18 @@
   align-items:center;
 }
 
-.footer a:first-child{
-  justify-self:start;
-}
+.footer a:first-child{justify-self:start}
+.footer span{justify-self:center}
+.footer a:last-child{justify-self:end}
 
-.footer span{
-  justify-self:center;
-}
-
-.footer a:last-child{
-  justify-self:end;
-}
-    @media(max-width:900px){.product{grid-template-columns:1fr}.images{grid-template-columns:1fr}nav div{display:none}}
-    .gallery{
-  position:relative;
-  width:100%;
-  border:1px solid rgba(255,255,255,.25);
-  overflow:hidden;
-}
-
-.gallery img{
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  cursor:zoom-in;
-}
-
-.arrow{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:2;
-  background:#fff;
-  color:#000;
-  border:none;
-  width:48px;
-  height:48px;
-  font-size:2rem;
-  cursor:pointer;
-}
-
-.left{
-  left:15px;
-}
-
-.right{
-  right:15px;
-}
-
-.zoom-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:999;
-  align-items:center;
-  justify-content:center;
-  cursor:zoom-out;
-}
-
-.zoom-modal img{
-  max-width:90vw;
-  max-height:90vh;
-  object-fit:contain;
-}
-
-.zoom-modal.active{
-  display:flex;
-}
-.mobile-menu{
-  display:none;
-}
-
-@media (max-width:768px){
-
-  .menu{
-    display:none;
-  }
-
-  .mobile-menu{
-    display:block;
-  }
+@media(max-width:900px){
+  .menu{display:none}
+  .mobile-menu{display:block}
 
   .mobile-menu summary{
-    list-style:none;
     cursor:pointer;
-    color:white;
-    font-size:14px;
-    letter-spacing:.2em;
+    list-style:none;
+    letter-spacing:.15em;
   }
 
   .mobile-links{
@@ -133,37 +245,38 @@
     gap:15px;
   }
 
-  .mobile-links a{
-    color:white;
-    text-transform:uppercase;
-    letter-spacing:.15em;
+  .producto{
+    padding:120px 24px 70px;
+  }
+
+  .container{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .size-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+    gap:20px;
+    text-align:center;
+  }
+
+  .footer a:first-child,
+  .footer span,
+  .footer a:last-child{
+    justify-self:center;
   }
 }
-  </style>
+</style>
 </head>
 
-<script>
-  const images = ["/sudadera-frente.png", "/sudadera-vuelta.png"];
-  let currentImage = 0;
-
-  function changeImage(direction) {
-    currentImage = (currentImage + direction + images.length) % images.length;
-    document.getElementById("mainImage").src = images[currentImage];
-    document.getElementById("zoomImage").src = images[currentImage];
-  }
-
-  function openZoom() {
-    document.getElementById("zoomModal").classList.add("active");
-  }
-
-  function closeZoom() {
-    document.getElementById("zoomModal").classList.remove("active");
-  }
-</script>
-
 <body>
-  <header>
-    <nav>
+
+<header>
+<nav>
 
 <a href="/">
   <img src="/A_I-04.png" alt="Adultxs Inexpertxs">
@@ -190,65 +303,103 @@
 </div>
 
 </nav>
-  </header>
+</header>
 
-  <main>
-    <section class="product">
-      <div class="gallery">
-  <button class="arrow left" onclick="changeImage(-1)">‹</button>
+<section class="producto">
 
-  <img id="mainImage" src="/sudadera-frente.png" alt="Sudadera" onclick="openZoom()">
+<div class="container">
 
-  <button class="arrow right" onclick="changeImage(1)">›</button>
+<div class="galeria">
+  <img src="/sudadera-frente.png" alt="Sudadera Adultxs Inexpertxs">
 </div>
 
-<div id="zoomModal" class="zoom-modal" onclick="closeZoom()">
-  <img id="zoomImage" src="/sudadera-frente.png" alt="Sudadera zoom">
+<div>
+
+<p class="label">Cositas</p>
+
+<h1>Sudadera</h1>
+
+<p class="descripcion">
+Prenda de soporte emocional para esos días complicados donde existir ya cuenta como productividad.
+</p>
+
+<div class="tallas">
+
+<h2>Tallas disponibles</h2>
+
+<div class="size-grid">
+
+<div class="size-option">
+  <strong>S</strong>
+  <span>Agotada</span>
 </div>
 
-      <div>
-        <h1>Sudadera</h1>
-        <p>Prenda de soporte emocional para esos días complicados donde existir ya cuenta como productividad.</p>
-        <p>Ideal para sobrevivir al frío, a la vida adulta y a juntas que pudieron ser un mensaje.</p>
-        <a class="btn" href="/#contactanos">Pedir información</a>
-      </div>
-    </section>
-  </main>
+<div class="size-option">
+  <strong>M</strong>
+  <span>Agotada</span>
+</div>
 
-  <footer>
-   <div class="footer">
+<div class="size-option">
+  <strong>L</strong>
+  <span>Agotada</span>
+</div>
 
-  <a href="/aviso-privacidad.html">
-    Aviso de Privacidad
-  </a>
-
-  <span>
-    © 2026 Adultxs Inexpertxs
-  </span>
-
-  <a
-    href="https://www.instagram.com/adultxs_inexpertxs/"
-    target="_blank"
-    aria-label="Instagram"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="26"
-      height="26"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="18" cy="6" r="1"></circle>
-    </svg>
-  </a>
+<div class="size-option">
+  <strong>XL</strong>
+  <span>Agotada</span>
+</div>
 
 </div>
-  </footer>
+
+<p class="aviso">
+Todas las tallas están temporalmente agotadas. Vuelve pronto o escríbenos para apartar la próxima tanda.
+</p>
+
+</div>
+
+<div class="botones">
+
+<a class="btn btn-primary" href="#">
+Agotado
+</a>
+
+<a class="btn btn-secondary" href="/cositas.html">
+Back a cositas
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer">
+
+<a href="/aviso-privacidad.html">
+Aviso de Privacidad
+</a>
+
+<span>
+© 2026 Adultxs Inexpertxs
+</span>
+
+<a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank" aria-label="Instagram">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="2" y="2" width="20" height="20" rx="5"/>
+<circle cx="12" cy="12" r="4"/>
+<circle cx="18" cy="6" r="1"/>
+</svg>
+
+</a>
+
+</div>
+
+</footer>
+
 </body>
 </html>
