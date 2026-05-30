@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credencial Adultxs Inexpertxs</title>
+
+  <link rel="icon" type="image/png" href="/A_I-04.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Bebas Neue", sans-serif;
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 460px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 56px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      font-family: Arial, sans-serif;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      background: #000;
+      color: #fff;
+      border: 1px solid #fff;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button, .home-link {
+      background: #fff;
+      color: #000;
+      border: 1px solid #fff;
+      padding: 14px 24px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    button:hover, .home-link:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    #result {
+      display: none;
+      text-align: center;
+    }
+
+    .member-card {
+      width: 360px;
+      height: 560px;
+      background: #050505;
+      border-radius: 28px;
+      margin: 30px auto 22px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #222;
+      box-shadow: 0 20px 50px rgba(255,255,255,0.15);
+    }
+
+    .side-text {
+      position: absolute;
+      left: 28px;
+      top: 70px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 52px;
+      letter-spacing: 2px;
+      color: #fff;
+      z-index: 5;
+    }
+
+    .small-logo {
+      position: absolute;
+      left: 28px;
+      bottom: 155px;
+      width: 52px;
+      z-index: 6;
+    }
+
+    .big-logo {
+      position: absolute;
+      width: 420px;
+      right: -205px;
+      top: 145px;
+      z-index: 2;
+    }
+
+    .card-info {
+      position: absolute;
+      left: 32px;
+      bottom: 55px;
+      text-align: left;
+      z-index: 7;
+    }
+
+    .card-info h2 {
+      font-size: 38px;
+      line-height: 1;
+      margin: 0;
+      color: #fff;
+    }
+
+    .card-info span {
+      display: block;
+      font-size: 26px;
+      margin-top: 8px;
+      color: #fff;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .member-card {
+        width: 320px;
+        height: 500px;
+      }
+
+      .side-text {
+        font-size: 44px;
+      }
+
+      .big-logo {
+        width: 370px;
+        right: -185px;
+        top: 135px;
+      }
+
+      .card-info h2 {
+        font-size: 32px;
+      }
+
+      .card-info span {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="panel" id="formPanel">
+      <img src="/A_I-04.png" width="70" alt="Adultxs Inexpertxs" />
+
+      <h1>GENERA TU CREDENCIAL</h1>
+      <p>Llena tus datos y descarga tu credencial oficial de Adultxs Inexpertxs.</p>
+
+      <input id="name" type="text" placeholder="Tu nombre" />
+      <input id="email" type="email" placeholder="Tu correo" />
+      <input id="instagram" type="text" placeholder="Tu Instagram" />
+
+      <button onclick="generateCredential()">GENERAR CREDENCIAL</button>
+
+      <br />
+      <a class="home-link" href="/">VOLVER AL HOME</a>
+    </section>
+
+    <section id="result">
+      <h1>TU CREDENCIAL</h1>
+
+      <div class="member-card" id="memberCard">
+        <div class="side-text">ADULTX INEXPERTX</div>
+
+        <img class="small-logo" src="/A_I-04.png" alt="Logo" />
+        <img class="big-logo" src="/A_I-04.png" alt="Logo" />
+
+        <div class="card-info">
+          <h2 id="cardName">NOMBRE</h2>
+          <span id="cardNumber">SOCIO #AI-000000</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="downloadCard()">DESCARGAR IMAGEN</button>
+        <button onclick="shareCard()">COMPARTIR STORIES</button>
+      </div>
+
+      <br />
+      <a class="home-link" href="/">VOLVER AL HOME</a>
+    </section>
+  </main>
+
+  <script>
+    let currentMemberNumber = "";
+
+    async function sendRegistration(name, email, instagram, memberNumber) {
+      try {
+        await fetch("https://formsubmit.co/ajax/adultosinexpertos@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify({
+            nombre: name,
+            correo: email,
+            instagram: instagram,
+            numero_socio: memberNumber,
+            proyecto: "Adultxs Inexpertxs"
+          })
+        });
+      } catch (error) {
+        console.error("No se pudo enviar el registro:", error);
+      }
+    }
+
+    async function generateCredential() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const instagram = document.getElementById("instagram").value.trim();
+
+      if (!name) {
+        alert("Escribe tu nombre.");
+        return;
+      }
+
+      const random = Math.floor(100000 + Math.random() * 900000);
+      currentMemberNumber = "AI-" + random;
+
+      document.getElementById("cardName").innerText = name.toUpperCase();
+      document.getElementById("cardNumber").innerText = "SOCIO #" + currentMemberNumber;
+
+      document.getElementById("formPanel").style.display = "none";
+      document.getElementById("result").style.display = "block";
+
+      await sendRegistration(name, email, instagram, currentMemberNumber);
+    }
+
+    async function createCanvas() {
+      const card = document.getElementById("memberCard");
+
+      return await html2canvas(card, {
+        scale: 3,
+        backgroundColor: null,
+        useCORS: true
+      });
+    }
+
+    async function downloadCard() {
+      const canvas = await createCanvas();
+      const link = document.createElement("a");
+
+      link.download = "credencial-adultxs-inexpertxs.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }
+
+    async function shareCard() {
+      const canvas = await createCanvas();
+
+      canvas.toBlob(async function(blob) {
+        if (!blob) return;
+
+        const file = new File([blob], "credencial-adultxs-inexpertxs.png", {
+          type: "image/png"
+        });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: "Mi credencial Adultxs Inexpertxs",
+            text: "Ya tengo mi credencial de Adultxs Inexpertxs.",
+            files: [file]
+          });
+        } else {
+          alert("Descarga la imagen y súbela manualmente a Instagram Stories.");
+          downloadCard();
+        }
+      }, "image/png");
+    }
+  </script>
+</body>
+</html>

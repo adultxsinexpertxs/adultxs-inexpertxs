@@ -1,5 +1,3 @@
-import CredencialPopup from "./CredencialPopup";
-
 const navItems = [
   { label: "Nosotrxs", href: "/nosotroxs.html" },
   { label: "Colaboraciones", href: "/colaboraciones.html" },
@@ -32,7 +30,32 @@ export default function AdultxsInexpertxs() {
         style={bebasFont}
         className="min-h-screen bg-black text-white selection:bg-white selection:text-black"
       >
-        <CredencialPopup />
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 px-6">
+          <div className="relative max-w-md border border-white bg-black p-8 text-center">
+            <button
+              onClick={() => {
+                const popup = document.querySelector(".credencial-popup");
+                if (popup) popup.remove();
+              }}
+              className="absolute right-4 top-2 text-3xl text-white"
+            >
+              ×
+            </button>
+
+            <h2 className="text-5xl uppercase">¿Ya eres inexpertx?</h2>
+
+            <p className="mt-4 text-xl uppercase text-white/70">
+              Genera tu credencial oficial de Adultxs Inexpertxs.
+            </p>
+
+            <a
+              href="/credencial.html"
+              className="mt-8 inline-flex border border-white bg-white px-8 py-4 text-2xl uppercase tracking-[0.16em] text-black transition hover:bg-black hover:text-white"
+            >
+              Quiero mi credencial
+            </a>
+          </div>
+        </div>
 
         <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md">
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
@@ -114,21 +137,7 @@ export default function AdultxsInexpertxs() {
               aria-label="Instagram"
               className="justify-self-end text-white/70 transition hover:text-white"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26"
-                height="26"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="18" cy="6" r="1" />
-              </svg>
+              Instagram
             </a>
           </div>
         </footer>
