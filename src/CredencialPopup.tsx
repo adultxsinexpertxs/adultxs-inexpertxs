@@ -10,13 +10,15 @@ export default function CredencialPopup() {
         <div className="ai-popup-overlay">
           <div className="ai-popup-box">
             <button
-              type="button"
-              className="ai-close-btn"
-              onClick={() => setOpen(false)}
-              aria-label="Cerrar popup"
-            >
-              ×
-            </button>
+  type="button"
+  className="ai-close-btn"
+  onClick={() => {
+    document.querySelector(".ai-popup-overlay")?.remove();
+  }}
+  aria-label="Cerrar popup"
+>
+  ×
+</button>
 
             <h2>¿YA ERES INEXPERTX?</h2>
 

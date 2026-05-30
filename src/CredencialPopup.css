@@ -1,4 +1,4 @@
-.popup-overlay {
+.ai-popup-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.88);
@@ -9,158 +9,62 @@
   padding: 20px;
 }
 
-.popup-box {
+.ai-popup-box {
+  position: relative;
   width: 100%;
   max-width: 430px;
-  background: #050505;
-  border: 1px solid white;
-  padding: 34px;
+  background: #000;
+  border: 1px solid #fff;
+  padding: 42px 30px;
   text-align: center;
-  position: relative;
 }
 
-.popup-box h2 {
-  font-size: 44px;
-  margin: 0 0 10px;
-  color: white;
-}
-
-.popup-box p {
-  font-family: Arial, sans-serif;
-  color: #ccc;
-  font-size: 14px;
-  margin-bottom: 18px;
-}
-
-.popup-box input {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  background: black;
-  color: white;
-  border: 1px solid white;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-}
-
-.popup-box button,
-.card-actions button {
-  background: white;
-  color: black;
-  border: none;
-  padding: 14px 24px;
-  font-size: 22px;
-  cursor: pointer;
-  font-family: "Bebas Neue", sans-serif;
-}
-
-.close-btn {
+.ai-close-btn {
   position: absolute;
-  top: 8px;
+  top: 10px;
   right: 14px;
   background: transparent !important;
+  border: none !important;
   color: white !important;
-  font-size: 32px !important;
-  padding: 0 !important;
-}
-
-.card-section {
-  background: #000;
-  color: white;
-  padding: 120px 20px 80px;
-  text-align: center;
-}
-
-.card-section h2 {
-  font-size: 48px;
-  margin-bottom: 30px;
-}
-
-.member-card {
-  width: 360px;
-  height: 560px;
-  background: #050505;
-  border-radius: 28px;
-  margin: 0 auto 28px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #222;
-  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.16);
-}
-
-.side-text {
-  position: absolute;
-  left: 28px;
-  top: 72px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 52px;
-  letter-spacing: 2px;
-  color: white;
-  z-index: 5;
-}
-
-.small-logo {
-  position: absolute;
-  left: 28px;
-  bottom: 155px;
-  width: 52px;
-  z-index: 6;
-}
-
-.big-logo {
-  position: absolute;
-  width: 420px;
-  right: -205px;
-  top: 145px;
-  z-index: 2;
-}
-
-.card-info {
-  position: absolute;
-  left: 32px;
-  bottom: 55px;
-  text-align: left;
-  z-index: 7;
-}
-
-.card-info h3 {
-  font-size: 38px;
+  font-size: 34px;
   line-height: 1;
-  margin: 0;
-  color: white;
+  cursor: pointer;
+  z-index: 9999999;
+  padding: 0;
+  width: 24px;
+  height: 36px;
 }
 
-.card-info p {
+.ai-popup-box h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  color: white;
+  margin: 0 0 18px;
+}
+
+.ai-popup-box p {
+  font-family: "Bebas Neue", sans-serif;
   font-size: 26px;
-  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 34px;
+  line-height: 1.25;
+}
+
+.ai-main-link {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+  border: 1px solid white;
+  padding: 18px 22px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+
+.ai-main-link:hover {
+  background: black;
   color: white;
-}
-
-.card-actions {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 480px) {
-  .member-card {
-    width: 320px;
-    height: 500px;
-  }
-
-  .side-text {
-    font-size: 44px;
-  }
-
-  .big-logo {
-    width: 370px;
-    right: -185px;
-    top: 135px;
-  }
-
-  .card-info h3 {
-    font-size: 32px;
-  }
 }
