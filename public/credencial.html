@@ -7,7 +7,6 @@
 
   <link rel="icon" type="image/png" href="/A_I-04.png" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
   <style>
@@ -55,7 +54,8 @@
       box-sizing: border-box;
     }
 
-    button, .home-link {
+    button,
+    .home-link {
       background: #fff;
       color: #000;
       border: 1px solid #fff;
@@ -68,7 +68,8 @@
       margin-top: 12px;
     }
 
-    button:hover, .home-link:hover {
+    button:hover,
+    .home-link:hover {
       background: #000;
       color: #fff;
     }
@@ -87,35 +88,40 @@
       position: relative;
       overflow: hidden;
       border: 1px solid #222;
-      box-shadow: 0 20px 50px rgba(255,255,255,0.15);
+      box-shadow: 0 20px 50px rgba(255, 255, 255, 0.15);
     }
 
-    .side-text {
-  position: absolute;
-  left: 28px;
-  top: 76px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-size: 52px;
-  letter-spacing: 2px;
-  color: white;
-  z-index: 10;
-}
+    .side-title {
+      position: absolute;
+      left: 28px;
+      top: 70px;
+      width: 58px;
+      height: auto;
+      z-index: 20;
+    }
 
-.small-logo {
-  position: absolute;
-  left: 28px;
-  bottom: 155px;
-  width: 52px;
-  z-index: 10;
-}
+    .small-logo {
+      position: absolute;
+      left: 28px;
+      bottom: 155px;
+      width: 52px;
+      z-index: 21;
+    }
+
+    .big-logo {
+      position: absolute;
+      width: 420px;
+      right: -205px;
+      top: 145px;
+      z-index: 2;
+    }
 
     .card-info {
       position: absolute;
       left: 32px;
       bottom: 55px;
       text-align: left;
-      z-index: 7;
+      z-index: 30;
     }
 
     .card-info h2 {
@@ -149,8 +155,16 @@
         height: 500px;
       }
 
-      .side-text {
-        font-size: 44px;
+      .side-title {
+        left: 25px;
+        top: 65px;
+        width: 52px;
+      }
+
+      .small-logo {
+        left: 25px;
+        bottom: 138px;
+        width: 46px;
       }
 
       .big-logo {
@@ -192,7 +206,7 @@
       <h1>TU CREDENCIAL</h1>
 
       <div class="member-card" id="memberCard">
-        <div class="side-text">ADULTX INEXPERTX</div>
+        <img class="side-title" src="/side-title.png" alt="Adultx Inexpertx" />
 
         <img class="small-logo" src="/A_I-04.png" alt="Logo" />
         <img class="big-logo" src="/A_I-04.png" alt="Logo" />
