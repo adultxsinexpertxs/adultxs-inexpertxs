@@ -1,77 +1,11 @@
 import CredencialPopup from "./CredencialPopup";
 
-const navItems = [
-  { label: "Nosotrxs", href: "/nosotroxs.html" },
-  { label: "Colaboraciones", href: "/colaboraciones.html" },
-  { label: "Cositas", href: "/cositas.html" },
-  { label: "Contáctanos", href: "/contactanos.html" },
-];
-
-const bebasFont = {
-  fontFamily: '"Bebas Neue", sans-serif',
-};
-
-function LogoMark({ small = false }) {
-  return (
-    <img
-      src="/A_I-04.png"
-      alt="Adultxs Inexpertxs Logo"
-      className={`${
-        small ? "h-12 w-12" : "h-16 w-16"
-      } object-contain transition duration-300 hover:scale-105`}
-    />
-  );
-}
-
 export default function AdultxsInexpertxs() {
   return (
     <>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');`}</style>
+      <CredencialPopup />
 
-      <main
-        style={bebasFont}
-        className="min-h-screen bg-black text-white selection:bg-white selection:text-black"
-      >
-        <CredencialPopup />
-
-        <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md">
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
-            <a href="/" aria-label="Ir al inicio">
-              <LogoMark small />
-            </a>
-
-            <details className="relative md:hidden">
-              <summary className="cursor-pointer list-none text-sm font-black uppercase tracking-[0.25em] text-white">
-                Menú
-              </summary>
-
-              <div className="absolute right-0 mt-4 grid min-w-56 gap-4 border border-white/20 bg-black p-5 text-right">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="text-sm font-black uppercase tracking-[0.22em] text-white/90"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </details>
-
-            <div className="hidden items-center gap-10 md:flex">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-black uppercase tracking-[0.22em] text-white/90 transition hover:text-white hover:underline hover:underline-offset-8"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </nav>
-        </header>
-
+      <main>
         <section className="relative isolate flex min-h-screen items-center px-6 pt-28 lg:px-16">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(85,77,32,0.38),transparent_34%),linear-gradient(180deg,#0b0b0b,#000)]" />
 
@@ -85,39 +19,22 @@ export default function AdultxsInexpertxs() {
               tenerlo todo resuelto.
             </p>
 
-            <a
-              href="/nosotroxs.html"
-              className="mx-auto mt-14 inline-flex items-center justify-center border border-white bg-white px-10 py-4 text-2xl uppercase tracking-[0.18em] text-black transition hover:bg-transparent hover:text-white"
-            >
-              Conócenos
-            </a>
+            <div className="mx-auto mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+              <a
+                href="/nosotroxs.html"
+                className="inline-flex items-center justify-center border border-white bg-white px-10 py-4 text-2xl uppercase tracking-[0.18em] text-black transition hover:bg-transparent hover:text-white"
+              >
+                Conócenos
+              </a>
+              <a
+                href="/comunidad.html"
+                className="inline-flex items-center justify-center border border-white bg-white px-10 py-4 text-2xl uppercase tracking-[0.18em] text-black transition hover:bg-transparent hover:text-white"
+              >
+                Comunidad
+              </a>
+            </div>
           </div>
         </section>
-
-        <footer className="border-t border-white/10 bg-black px-6 py-10 lg:px-10">
-          <div className="mx-auto grid max-w-7xl grid-cols-3 items-center">
-            <a
-              href="/aviso-privacidad.html"
-              className="justify-self-start text-sm uppercase tracking-[0.18em] text-white/70 transition hover:text-white"
-            >
-              Aviso de Privacidad
-            </a>
-
-            <p className="justify-self-center text-sm uppercase tracking-[0.18em] text-white/55">
-              © 2026 Adultxs Inexpertxs
-            </p>
-
-            <a
-              href="https://www.instagram.com/adultxs_inexpertxs/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="justify-self-end text-white/70 transition hover:text-white"
-            >
-              Instagram
-            </a>
-          </div>
-        </footer>
       </main>
     </>
   );
