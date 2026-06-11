@@ -1,7 +1,7 @@
 export default function Comunidad() {
   return (
-    <main>
-      <section className="section">
+    <main className="page">
+      <section className="page-hero">
         <p className="kicker">Por qué existe</p>
 
         <h1 className="h1">COMUNIDAD</h1>

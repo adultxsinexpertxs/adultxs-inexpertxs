@@ -1,7 +1,7 @@
 export default function Proyectos() {
   return (
-    <main>
-      <section className="section">
+    <main className="page">
+      <section className="page-hero">
         <p className="kicker">Lo que hacemos</p>
 
         <h1 className="h1">PROYECTOS</h1>

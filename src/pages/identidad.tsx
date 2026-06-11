@@ -1,7 +1,7 @@
 export default function Identidad() {
   return (
-    <main>
-      <section className="section">
+    <main className="page">
+      <section className="page-hero">
         <p className="kicker">Manual vivo de marca</p>
         <h1 className="h1">IDENTIDAD</h1>
         <p className="lead">

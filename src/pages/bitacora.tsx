@@ -1,7 +1,7 @@
 export default function Bitacora() {
   return (
-    <main>
-      <section className="section">
+    <main className="page">
+      <section className="page-hero">
         <p className="kicker">Proceso &gt; perfección</p>
 
         <h1 className="h1">BITÁCORA</h1>

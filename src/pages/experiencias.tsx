@@ -1,7 +1,7 @@
 export default function Experiencias() {
   return (
-    <main>
-      <section className="section">
+    <main className="page">
+      <section className="page-hero">
         <p className="kicker">Vivir antes que presumir</p>
 
         <h1 className="h1">EXPERIENCIAS</h1>
