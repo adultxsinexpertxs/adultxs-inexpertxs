@@ -2,12 +2,13 @@ export default function Experiencias() {
   return (
     <main className="page">
       <section className="page-hero">
-        <p className="kicker">Vivir antes que presumir</p>
+        <p className="kicker">Vivir antes que mostrar</p>
 
         <h1 className="h1">EXPERIENCIAS</h1>
 
         <p className="lead">
-          Porque los mejores proyectos no siempre terminan en un portafolio.
+          Lo que cuenta no es lo bien que se ve, sino lo que pasa mientras lo
+          hacemos.
         </p>
       </section>
 
@@ -17,21 +18,24 @@ export default function Experiencias() {
           <article className="card">
             <h2>Talleres</h2>
             <p>
-              Espacios para aprender compartiendo.
+              Lugares para probar, equivocarse con compañía y salir con algo
+              nuevo bajo el brazo.
             </p>
           </article>
 
           <article className="card">
             <h2>Eventos</h2>
             <p>
-              Encuentros entre personas que hacen cosas distintas.
+              Encuentros donde las ideas se mezclan, sin presión, solo ganas de
+              mover algo.
             </p>
           </article>
 
           <article className="card">
             <h2>Comunidad</h2>
             <p>
-              Conectar talentos que normalmente no coincidirían.
+              Personas que no tienen todas las respuestas, pero sí muchas ganas de
+              estar presentes.
             </p>
           </article>
 

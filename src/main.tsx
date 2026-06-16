@@ -4,15 +4,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
 
-import App from "./App.tsx";
-import Comunidad from "./pages/comunidad.tsx";
-import Proyectos from "./pages/proyectos.tsx";
-import Experiencias from "./pages/experiencias.tsx";
-import Bitacora from "./pages/bitacora.tsx";
-import Identidad from "./pages/identidad.tsx";
-import Navigation from "./components/Navigation.tsx";
-import Footer from "./components/Footer.tsx";
-import Layout from "./components/Layout.tsx";
+import App from "./App";
+import Comunidad from "./pages/comunidad";
+import Proyectos from "./pages/proyectos";
+import Colaboraciones from "./pages/colaboraciones";
+import Cositas from "./pages/cositas";
+import Contactanos from "./pages/contactanos";
+import Experiencias from "./pages/experiencias";
+import Bitacora from "./pages/bitacora";
+import Muro from "./pages/muro";
+
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import Layout from "./components/Layout";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -25,7 +29,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/experiencias" element={<Experiencias />} />
           <Route path="/bitacora" element={<Bitacora />} />
-          <Route path="/identidad" element={<Identidad />} />
+          <Route path="/muro" element={<Muro />} />
+          <Route path="/colaboraciones" element={<Colaboraciones />} />
+          <Route path="/cositas" element={<Cositas />} />
+          <Route path="/contactanos" element={<Contactanos />} />
           <Route path="*" element={<App />} />
         </Routes>
         <Footer />

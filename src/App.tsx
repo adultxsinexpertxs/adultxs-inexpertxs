@@ -1,41 +1,115 @@
-import CredencialPopup from "./CredencialPopup";
+import "./App.css";
+import { Link } from "react-router-dom";
 
-export default function AdultxsInexpertxs() {
+export default function App() {
   return (
-    <>
-      <CredencialPopup />
+    <main className="home">
+      <section className="hero heroDark">
+  <h1>
+    Jugar, equivocarnos y seguir construyendo <br />
+    sin que nadie nos lo tenga que explicar
+  </h1>
 
-      <main>
-        <section className="relative isolate flex min-h-screen items-center px-6 pt-28 lg:px-16">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(85,77,32,0.38),transparent_34%),linear-gradient(180deg,#0b0b0b,#000)]" />
+  <p className="heroText">
+    Un lugar para inventar proyectos, compartir aprendizajes y disfrutar la
+    vida adulta sin fingir que sabemos cómo se hace.
+  </p>
 
-          <div className="mx-auto w-full max-w-7xl text-center">
-            <h1 className="text-balance text-6xl font-black uppercase leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl xl:text-9xl">
-              Toma la vida con la seriedad que jugabas de niñx
-            </h1>
+  <div className="heroButtons">
+    <Link to="/comunidad" className="btnHero">
+      Conócenos
+    </Link>
 
-            <p className="mx-auto mt-16 max-w-4xl text-balance text-2xl uppercase text-white/75 md:text-3xl">
-              Un espacio para crear, colaborar y compartir ideas sin pretender
-              tenerlo todo resuelto.
+    <Link to="/comunidad" className="btnHero">
+      Comunidad
+    </Link>
+  </div>
+</section>
+
+      <section className="section intro">
+        <h2>¿Quiénes somos?</h2>
+
+        <p>
+          Somos personas que prefieren hacer en vez de esperar el permiso.
+          Construimos, nos equivocamos, celebramos los aprendizajes y seguimos
+          adelante con ganas de movernos juntas.
+        </p>
+      </section>
+
+      <section className="section">
+        <h2>Lo que hacemos</h2>
+
+        <div className="grid">
+          <article className="card">
+            <h3>Creatividad</h3>
+            <p>
+              Diseño, branding, ilustración, ideas visuales y conceptos que
+              empiezan como juego y terminan tomando forma.
             </p>
+          </article>
 
-            <div className="mx-auto mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-              <a
-                href="/nosotroxs.html"
-                className="inline-flex items-center justify-center border border-white bg-white px-10 py-4 text-2xl uppercase tracking-[0.18em] text-black transition hover:bg-transparent hover:text-white"
-              >
-                Conócenos
-              </a>
-              <a
-                href="/comunidad.html"
-                className="inline-flex items-center justify-center border border-white bg-white px-10 py-4 text-2xl uppercase tracking-[0.18em] text-black transition hover:bg-transparent hover:text-white"
-              >
-                Comunidad
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+          <article className="card">
+            <h3>Producción</h3>
+            <p>
+              Foto, video, contenido, eventos y experiencias que documentan lo
+              que pasa cuando la comunidad se mueve.
+            </p>
+          </article>
+
+          <article className="card">
+            <h3>Estrategia</h3>
+            <p>
+              Marketing, comunicación, medios, relaciones públicas y formas más
+              claras de contar lo que estamos construyendo.
+            </p>
+          </article>
+
+          <article className="card">
+            <h3>Comunidad</h3>
+            <p>
+              Personas, colaboraciones, talentos y proyectos que se conectan
+              desde la curiosidad, no desde la perfección.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section featured">
+        <h2>Proyectos que nacen aquí</h2>
+
+        <p>
+          Aquí compartimos lo que hacemos mientras aprendemos. Los proyectos no
+          son el final, son la excusa para probar, cambiar y seguir creciendo.
+        </p>
+
+        <div className="projectList">
+          <Link to="/proyectos">VERDE</Link>
+          <Link to="/proyectos">Dinero en Acción</Link>
+          <Link to="/proyectos">La Redención</Link>
+          <Link to="/proyectos">Café Cien</Link>
+        </div>
+      </section>
+
+      <section className="section quote">
+        <h2>Nunca dejamos de ser inexpertxs.</h2>
+        <p>
+          Y tal vez ahí está el punto: seguir intentando, seguir jugando y seguir
+          construyendo aunque no tengamos todo resuelto.
+        </p>
+      </section>
+
+      <section className="section cta">
+        <h2>¿Quieres sumar?</h2>
+
+        <p>
+          Si tienes una idea, un proyecto medio raro o simplemente ganas de
+          juntarte con personas que no esperan ser perfectas, aquí hay un lugar.
+        </p>
+
+        <Link to="/contactanos" className="btnPrimary">
+          Escríbenos
+        </Link>
+      </section>
+    </main>
   );
 }

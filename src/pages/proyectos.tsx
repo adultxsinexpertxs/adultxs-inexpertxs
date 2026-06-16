@@ -1,45 +1,69 @@
+import { Link } from "react-router-dom";
+
 export default function Proyectos() {
+  const categories = [
+    {
+      title: "Creatividad",
+      items: ["Branding", "Diseño gráfico", "Ilustración", "Dirección creativa"],
+    },
+    {
+      title: "Producción",
+      items: ["Fotografía", "Video", "Audio", "Producción audiovisual"],
+    },
+    {
+      title: "Digital",
+      items: [
+        "Desarrollo web",
+        "Marketing digital",
+        "Community management",
+        "Estrategia de contenido",
+      ],
+    },
+    {
+      title: "Experiencias",
+      items: ["Eventos", "Activaciones", "Talleres", "Colaboraciones"],
+    },
+    {
+      title: "Finanzas y estructura",
+      items: ["Presupuestos", "Administración", "Planeación", "Cotizaciones"],
+    },
+  ];
+
   return (
     <main className="page">
       <section className="page-hero">
-        <p className="kicker">Lo que hacemos</p>
-
-        <h1 className="h1">PROYECTOS</h1>
-
+        <p className="kicker">Lo que se experimenta</p>
+        <h1 className="h1">Proyectos</h1>
         <p className="lead">
-          Ideas, marcas, eventos, contenido y colaboraciones desarrolladas
-          bajo el sello Adultxs Inexpertxs.
+          Son ideas medio a medias, pruebas de fuego y cosas que crecen porque
+          alguien se animó a intentarlo.
         </p>
       </section>
 
       <section className="section section-sm">
         <div className="grid grid-3">
-
-          <article className="card">
-            <span className="tag">Creatividad</span>
-            <h2>Diseño e identidad</h2>
-            <p>
-              Desarrollo de conceptos, identidad visual y narrativa.
-            </p>
-          </article>
-
-          <article className="card">
-            <span className="tag">Contenido</span>
-            <h2>Producción</h2>
-            <p>
-              Fotografía, video, ilustración y contenido digital.
-            </p>
-          </article>
-
-          <article className="card">
-            <span className="tag">Experiencias</span>
-            <h2>Eventos</h2>
-            <p>
-              Activaciones, colaboraciones y experiencias presenciales.
-            </p>
-          </article>
-
+          {categories.map((category) => (
+            <article className="card" key={category.title}>
+              <span className="tag">{category.title}</span>
+              <ul className="clean-list">
+                {category.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
+      </section>
+
+      <section className="section section-sm">
+        <article className="card text-center">
+          <h2 className="text-4xl uppercase md:text-6xl">
+            ¿Tienes una idea que suena rara pero te gusta?
+          </h2>
+          <Link className="btn-primary mx-auto mt-6" to="/contactanos">
+            Cuéntanos
+          </Link>
+        </article>
       </section>
     </main>
   );
