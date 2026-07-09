@@ -91,16 +91,19 @@ h1{
 }
 
 .productos{
-  margin-top:80px;
+  margin-top:88px;
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:36px;
+  align-items:start;
 }
 
 .producto{
   border:1px solid rgba(0,0,0,.15);
-  padding:20px;
+  padding:16px 16px 24px;
   transition:.3s;
+  display:flex;
+  flex-direction:column;
 }
 
 .producto:hover{
@@ -114,25 +117,26 @@ h1{
 }
 
 .producto h2{
-  margin-top:20px;
-  font-size:3rem;
+  margin-top:28px;
+  font-size:3.35rem;
+  line-height:.95;
   text-transform:uppercase;
 }
 
 .producto p{
-  margin-top:15px;
-  color:rgba(0,0,0,.6);
-  font-size:1.4rem;
+  margin-top:20px;
+  color:rgba(0,0,0,.66);
+  font-size:1.55rem;
+  line-height:1.18;
 }
 
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  background:#000;
-  color:#fff;
-  padding:14px 28px;
+.estado-producto{
+  display:block;
+  margin-top:22px;
+  color:rgba(0,0,0,.42);
+  font-size:1.15rem;
   text-transform:uppercase;
-  letter-spacing:.15em;
+  letter-spacing:.14em;
 }
 
 footer{
@@ -169,6 +173,15 @@ footer{
 
   .catalogo{
     padding:120px 24px 80px;
+  }
+
+  .productos{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .producto{
+    padding:14px 14px 24px;
   }
 
 }
@@ -221,6 +234,15 @@ footer{
 }
 .mobile-menu{
   display:none;
+}
+
+@media (max-width:1100px){
+
+  .productos{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
 }
 
 @media (max-width:768px){
@@ -309,49 +331,49 @@ footer{
     <p class="label">Cositas</p>
 
     <h1>
-      Cositas para sobrevivir la adultez.
+      LLEVA LA COMUNIDAD CONTIGO.
     </h1>
 
     <p class="descripcion">
-      Productos cuidadosamente diseñados para acompañarte en esta aventura llamada existir.
+      La primera regla del Club de los Adultxs Inexpertxs es siempre hablar del Club de los Adultxs Inexpertxs.
     </p>
 
     <div class="productos">
 
-      <a class="producto" href="/sudadera.html">
-
-       <div class="product-image-loop">
-  <img class="front-img" src="/sudadera-frente.png" alt="Sudadera frente">
-  <img class="back-img" src="/sudadera-vuelta.png" alt="Sudadera vuelta">
-</div>
-
-        <h2>Sudadera</h2>
-
-        <p>
-          Prenda de soporte emocional para esos días complicados donde existir ya cuenta como productividad.
-        </p>
-
-        <span class="btn">
-          Ver producto
-        </span>
-
-      </a>
-
       <a class="producto" href="/playera.html">
 
         <div class="product-image-loop">
-  <img class="front-img" src="/playera-frente.png" alt="Playera frente">
-  <img class="back-img" src="/playera-vuelta.png" alt="Playera vuelta">
-</div>
+          <img class="front-img" src="/playera-frente.png" alt="Playera frente">
+          <img class="back-img" src="/playera-vuelta.png" alt="Playera vuelta">
+        </div>
 
         <h2>Playera</h2>
 
         <p>
-          Básica, negra, cómoda, pero sobretodo útil para comunicarle al mundo que te uniste al club.
+          No es una playera. Es una forma elegante de avisarle al mundo que tampoco tienes idea de lo que estás haciendo… pero ya no te da pena admitirlo.
         </p>
 
-        <span class="btn">
-          Ver producto
+        <span class="estado-producto">
+          Actualmente agotado
+        </span>
+
+      </a>
+
+      <a class="producto" href="/sudadera.html">
+
+        <div class="product-image-loop">
+          <img class="front-img" src="/sudadera-frente.png" alt="Sudadera frente">
+          <img class="back-img" src="/sudadera-vuelta.png" alt="Sudadera vuelta">
+        </div>
+
+        <h2>Sudadera</h2>
+
+        <p>
+          Ideal para sobrevivir juntas eternas, crisis existenciales, cambios de carrera o simplemente cuando hace frío y la adultez pesa un poquito más.
+        </p>
+
+        <span class="estado-producto">
+          Actualmente agotado
         </span>
 
       </a>
@@ -359,18 +381,18 @@ footer{
       <a class="producto" href="/gorra.html">
 
         <div class="product-image-loop">
-  <img class="front-img" src="/gorra-frente.png" alt="Gorra frente">
-  <img class="back-img" src="/gorra-vuelta.png" alt="Gorra vuelta">
-</div>
+          <img class="front-img" src="/gorra-frente.png" alt="Gorra frente">
+          <img class="back-img" src="/gorra-vuelta.png" alt="Gorra vuelta">
+        </div>
 
         <h2>Gorra</h2>
 
         <p>
-          Ideal para ocultar ojeras, pensamientos intrusivos y encuentros inesperados.
+          Perfecta para esconder el cabello despeinado o las decisiones cuestionables. Funciona sorprendentemente bien para ambas cosas.
         </p>
 
-        <span class="btn">
-          Ver producto
+        <span class="estado-producto">
+          Actualmente agotado
         </span>
 
       </a>
