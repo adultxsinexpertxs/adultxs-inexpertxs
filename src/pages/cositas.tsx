@@ -4,18 +4,21 @@ const products = [
     text: "No es una playera. Es una forma elegante de avisarle al mundo que tampoco tienes idea de lo que estás haciendo… pero ya no te da pena admitirlo.",
     frontImage: "/playera-frente.png",
     backImage: "/playera-vuelta.png",
+    href: `${import.meta.env.BASE_URL}playera.html`,
   },
   {
     name: "Sudadera",
     text: "Ideal para sobrevivir juntas eternas, crisis existenciales, cambios de carrera o simplemente cuando hace frío y la adultez pesa un poquito más.",
     frontImage: "/sudadera-frente.png",
     backImage: "/sudadera-vuelta.png",
+    href: `${import.meta.env.BASE_URL}sudadera.html`,
   },
   {
     name: "Gorra",
     text: "Perfecta para esconder el cabello despeinado o las decisiones cuestionables. Funciona sorprendentemente bien para ambas cosas.",
     frontImage: "/gorra-frente.png",
     backImage: "/gorra-vuelta.png",
+    href: `${import.meta.env.BASE_URL}gorra.html`,
   },
 ];
 
@@ -36,7 +39,7 @@ export default function Cositas() {
       >
         <div className="merch-grid">
           {products.map((product) => (
-            <article className="merch-card group" key={product.name}>
+            <a className="merch-card group" href={product.href} key={product.name}>
               <div className="merch-image" aria-hidden="true">
                 <img
                   className="merch-image-front animate-productFront"
@@ -53,7 +56,7 @@ export default function Cositas() {
               <h2>{product.name}</h2>
               <p>{product.text}</p>
               <span className="merch-status">Actualmente agotado</span>
-            </article>
+            </a>
           ))}
         </div>
       </section>

@@ -278,24 +278,30 @@ section.page-hero {
 .merch-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .merch-card {
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 1.25rem;
-  padding: 1rem 1rem 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   background: rgba(255,255,255,0.03);
   color: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   min-height: 100%;
+  overflow: hidden;
+  text-align: left;
+  text-decoration: none;
 }
 
 .merch-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  flex: 0 0 60%;
+  min-height: clamp(18rem, 28vw, 28rem);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 0.9rem;
   background: rgba(255,255,255,0.06);
@@ -306,7 +312,7 @@ section.page-hero {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .merch-image-back {
@@ -314,10 +320,16 @@ section.page-hero {
 }
 
 .merch-card h2 {
+  max-width: 100%;
   margin: 1.75rem 0 0;
+  overflow: hidden;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.5rem, 4vw, 4.25rem);
-  line-height: 0.92;
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  text-overflow: clip;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -326,20 +338,32 @@ section.page-hero {
   color: rgba(255,255,255,0.72);
   font-size: clamp(1.35rem, 1.8vw, 1.75rem);
   line-height: 1.16;
+  text-align: left;
 }
 
 .merch-status {
   display: block;
-  margin-top: 1.35rem;
+  margin-top: 1.75rem;
   color: rgba(255,255,255,0.46);
-  font-size: 1.05rem;
-  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-align: left;
   text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {
   .merch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .merch-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+  }
+
+  .merch-image {
+    min-height: clamp(20rem, 92vw, 32rem);
   }
 }
