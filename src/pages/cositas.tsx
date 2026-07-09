@@ -1,37 +1,58 @@
-export default function Cositas() {
-  const products = [
-    {
-      name: "Playera",
-      text: "La prenda para cuando quieres decir ‘aquí estoy’ sin fingir que ya lo tienes todo.",
-    },
-    {
-      name: "Gorra",
-      text: "Un parche contra el mundo real, para los días en los que la cabeza se siente pesada.",
-    },
-    {
-      name: "Sudadera",
-      text: "Para las sesiones largas, las charlas infinitas y las noches de creatividad a medias.",
-    },
-  ];
+const products = [
+  {
+    name: "Playera",
+    text: "No es una playera. Es una forma elegante de avisarle al mundo que tampoco tienes idea de lo que estás haciendo… pero ya no te da pena admitirlo.",
+    frontImage: "/playera-frente.png",
+    backImage: "/playera-vuelta.png",
+  },
+  {
+    name: "Sudadera",
+    text: "Ideal para sobrevivir juntas eternas, crisis existenciales, cambios de carrera o simplemente cuando hace frío y la adultez pesa un poquito más.",
+    frontImage: "/sudadera-frente.png",
+    backImage: "/sudadera-vuelta.png",
+  },
+  {
+    name: "Gorra",
+    text: "Perfecta para esconder el cabello despeinado o las decisiones cuestionables. Funciona sorprendentemente bien para ambas cosas.",
+    frontImage: "/gorra-frente.png",
+    backImage: "/gorra-vuelta.png",
+  },
+];
 
+export default function Cositas() {
   return (
-    <main className="page">
+    <main className="page merch-page">
       <section className="page-hero">
         <p className="kicker">Pequeños aliados</p>
-        <h1 className="h1">Cositas para sobrevivir</h1>
+        <h1 className="h1">LLEVA LA COMUNIDAD CONTIGO.</h1>
         <p className="lead">
-          Artículos que no arreglan la vida, pero ayudan a sentirla un poco más
-          vivible.
+          La primera regla del Club de los Adultxs Inexpertxs es siempre hablar del Club de los Adultxs Inexpertxs.
         </p>
       </section>
 
-      <section className="section section-sm">
-        <div className="grid grid-3">
+      <section
+        className="section section-sm merch-products"
+        aria-label="Productos de merch"
+      >
+        <div className="merch-grid">
           {products.map((product) => (
-            <article className="card" key={product.name}>
-              <span className="tag">Agotado por ahora</span>
+            <article className="merch-card group" key={product.name}>
+              <div className="merch-image" aria-hidden="true">
+                <img
+                  className="merch-image-front animate-productFront"
+                  src={product.frontImage}
+                  alt=""
+                />
+                <img
+                  className="merch-image-back animate-productBack"
+                  src={product.backImage}
+                  alt=""
+                />
+              </div>
+
               <h2>{product.name}</h2>
               <p>{product.text}</p>
+              <span className="merch-status">Actualmente agotado</span>
             </article>
           ))}
         </div>

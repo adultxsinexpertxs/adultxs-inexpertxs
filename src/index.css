@@ -266,3 +266,80 @@ section.page-hero {
 .mt-10 {
   margin-top: 2.5rem;
 }
+/* Merch / Cositas */
+.merch-page {
+  max-width: 1400px;
+}
+
+.merch-products {
+  padding-top: 2.5rem;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.merch-card {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1.25rem;
+  padding: 1rem 1rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.merch-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  background: rgba(255,255,255,0.06);
+}
+
+.merch-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.merch-image-back {
+  opacity: 0;
+}
+
+.merch-card h2 {
+  margin: 1.75rem 0 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.25rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.merch-card p {
+  margin: 1.25rem 0 0;
+  color: rgba(255,255,255,0.72);
+  font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+  line-height: 1.16;
+}
+
+.merch-status {
+  display: block;
+  margin-top: 1.35rem;
+  color: rgba(255,255,255,0.46);
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .merch-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
