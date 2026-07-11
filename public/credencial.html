@@ -18,9 +18,104 @@
       min-height: 100vh;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .site-nav,
+    .footer-inner {
+      width: min(100% - 32px, 1220px);
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .menu,
+    .footer-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+
+    .menu a,
+    .footer-menu a,
+    .footer-meta a {
+      color: rgba(255, 255, 255, 0.74);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover,
+    .footer-menu a:hover,
+    .footer-meta a:hover {
+      color: #fff;
+    }
+
+    details {
+      display: none;
+      position: relative;
+    }
+
+    summary {
+      cursor: pointer;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      list-style: none;
+      text-transform: uppercase;
+    }
+
+    .mobile-links {
+      position: absolute;
+      top: 32px;
+      right: 0;
+      display: grid;
+      gap: 14px;
+      min-width: 220px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #000;
+      padding: 20px;
+    }
+
     .page {
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 120px 20px 80px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -56,8 +151,8 @@
 
     button,
     .home-link {
-      background: #fff;
-      color: #000;
+      background: transparent;
+      color: #fff;
       border: 1px solid #fff;
       padding: 14px 24px;
       font-family: "Bebas Neue", sans-serif;
@@ -66,12 +161,23 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 12px;
+      transition:
+        background-color 0.22s ease,
+        color 0.22s ease,
+        border-color 0.22s ease;
     }
 
     button:hover,
     .home-link:hover {
-      background: #000;
-      color: #fff;
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+
+    button:active,
+    .home-link:active {
+      background: #f3f3f3;
+      color: #000;
     }
 
     #result {
@@ -100,19 +206,11 @@
       z-index: 20;
     }
 
-    .small-logo {
-      position: absolute;
-      left: 28px;
-      bottom: 155px;
-      width: 52px;
-      z-index: 21;
-    }
-
     .big-logo {
       position: absolute;
-      width: 420px;
-      right: -205px;
-      top: 145px;
+      width: 390px;
+      right: -245px;
+      top: 148px;
       z-index: 2;
     }
 
@@ -120,8 +218,10 @@
       position: absolute;
       left: 32px;
       bottom: 55px;
+      width: calc(100% - 64px);
       text-align: left;
       z-index: 30;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     }
 
     .card-info h2 {
@@ -129,6 +229,7 @@
       line-height: 1;
       margin: 0;
       color: #fff;
+      overflow-wrap: break-word;
     }
 
     .card-info span {
@@ -136,6 +237,7 @@
       font-size: 26px;
       margin-top: 8px;
       color: #fff;
+      overflow-wrap: break-word;
     }
 
     .actions {
@@ -143,6 +245,37 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 56px 0;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    .footer-inner p,
+    .footer-inner span {
+      color: rgba(255, 255, 255, 0.62);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer-menu,
+    .footer-meta {
+      display: grid;
+      gap: 14px;
     }
 
     @media (max-width: 480px) {
@@ -161,15 +294,9 @@
         width: 52px;
       }
 
-      .small-logo {
-        left: 25px;
-        bottom: 138px;
-        width: 46px;
-      }
-
       .big-logo {
-        width: 370px;
-        right: -185px;
+        width: 340px;
+        right: -215px;
         top: 135px;
       }
 
@@ -181,10 +308,54 @@
         font-size: 23px;
       }
     }
+
+    @media (max-width: 860px) {
+      .menu {
+        display: none;
+      }
+
+      details {
+        display: block;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="brand" href="/">
+        <img src="/A_I-04.png" alt="" />
+        <span>Adultxs Inexpertxs</span>
+      </a>
+
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/nosotrxs">Nosotrxs</a>
+        <a href="/conocenos">Conócenos</a>
+        <a href="/comunidad">Comunidad</a>
+        <a href="/merch">Merch</a>
+        <a href="/contactanos">Contactanos</a>
+      </div>
+
+      <details>
+        <summary>Menú</summary>
+        <div class="mobile-links">
+          <a href="/">Home</a>
+          <a href="/nosotrxs">Nosotrxs</a>
+          <a href="/conocenos">Conócenos</a>
+          <a href="/comunidad">Comunidad</a>
+          <a href="/merch">Merch</a>
+          <a href="/contactanos">Contactanos</a>
+        </div>
+      </details>
+    </nav>
+  </header>
+
   <main class="page">
     <section class="panel" id="formPanel">
       <img src="/A_I-04.png" width="70" alt="Adultxs Inexpertxs" />
@@ -208,7 +379,6 @@
       <div class="member-card" id="memberCard">
         <img class="side-title" src="/side-title.png" alt="Adultx Inexpertx" />
 
-        <img class="small-logo" src="/A_I-04.png" alt="Logo" />
         <img class="big-logo" src="/A_I-04.png" alt="Logo" />
 
         <div class="card-info">
@@ -226,6 +396,30 @@
       <a class="home-link" href="/">VOLVER AL HOME</a>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a class="footer-brand" href="/">Adultxs Inexpertxs</a>
+        <p>Seguimos aprendiendo.</p>
+      </div>
+
+      <div class="footer-menu">
+        <a href="/">Home</a>
+        <a href="/nosotrxs">Nosotrxs</a>
+        <a href="/conocenos">Conócenos</a>
+        <a href="/comunidad">Comunidad</a>
+        <a href="/merch">Merch</a>
+        <a href="/contactanos">Contactanos</a>
+      </div>
+
+      <div class="footer-meta">
+        <a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="/aviso-privacidad.html">Aviso de privacidad</a>
+        <span>© 2026 Adultxs Inexpertxs.</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
     let currentMemberNumber = "";

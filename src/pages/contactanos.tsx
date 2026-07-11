@@ -1,21 +1,18 @@
+import Button from "../components/ui/Button";
+import PageHero from "../components/ui/PageHero";
+import Section from "../components/ui/Section";
+
 export default function Contactanos() {
   return (
-    <main className="page">
-      <section className="page-hero">
-        <p className="kicker">Hablemos</p>
-        <h1 className="h1">Contáctanos</h1>
-        <p className="lead">
-          Cuéntanos tu idea, tu lío creativo o tu proyecto en construcción. No
-          damos garantías, solo ganas de juntarnos y ver qué pasa.
-        </p>
-      </section>
+    <main>
+      <PageHero
+        eyebrow="Contactanos"
+        title="Cuéntanos qué estás intentando."
+        subtitle="No tienes que llegar con todo resuelto. Una idea, una duda o una colaboración posible ya es suficiente para empezar a hablar."
+      />
 
-      <section className="section section-sm">
-        <form
-          className="contact-form"
-          action="https://formsubmit.co/adultxs.inexpertxs@gmail.com"
-          method="POST"
-        >
+      <Section className="contact-section">
+        <form className="contact-form" action="https://formsubmit.co/adultxs.inexpertxs@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="Nuevo mensaje Adultxs Inexpertxs" />
 
@@ -30,15 +27,20 @@ export default function Contactanos() {
           </label>
 
           <label>
-            Cuéntanos
+            Mensaje
             <textarea name="mensaje" rows={6} required />
           </label>
 
-          <button type="submit" className="btn-primary">
-            Mandar mensaje
-          </button>
+          <Button type="submit">Enviar</Button>
         </form>
-      </section>
+
+        <aside className="contact-links">
+          <p>adultxs.inexpertxs@gmail.com</p>
+          <a href="https://www.instagram.com/adultxs_inexpertxs/" target="_blank" rel="noreferrer">
+            Instagram
+          </a>
+        </aside>
+      </Section>
     </main>
   );
 }

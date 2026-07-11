@@ -1,114 +1,93 @@
-import "./App.css";
-import { Link } from "react-router-dom";
+import ClubCredentialModal from "./components/ClubCredentialModal";
+import Button from "./components/ui/Button";
+import EditorialBlock from "./components/ui/EditorialBlock";
+import ProductCard from "./components/merch/ProductCard";
+import Section from "./components/ui/Section";
+import { merchProducts } from "./data/merch";
+
+const whatWeDo = [
+  {
+    title: "Creamos",
+    text: "Ideas, piezas, encuentros y proyectos que empiezan con una pregunta honesta: ¿y si lo intentamos?",
+  },
+  {
+    title: "Compartimos",
+    text: "Procesos, aprendizajes, errores útiles y herramientas para que nadie tenga que fingir que ya sabe.",
+  },
+  {
+    title: "Experimentamos",
+    text: "Probamos formatos, colaboraciones y caminos raros porque crecer también puede tener recreo.",
+  },
+];
 
 export default function App() {
   return (
-    <main className="home">
-      <section className="hero heroDark">
-  <h1>
-    Jugar, equivocarnos y seguir construyendo <br />
-    sin que nadie nos lo tenga que explicar
-  </h1>
+    <main>
+      <ClubCredentialModal />
 
-  <p className="heroText">
-    Un lugar para inventar proyectos, compartir aprendizajes y disfrutar la
-    vida adulta sin fingir que sabemos cómo se hace.
-  </p>
-
-  <div className="heroButtons">
-    <Link to="/comunidad" className="btnHero">
-      Conócenos
-    </Link>
-
-    <Link to="/comunidad" className="btnHero">
-      Comunidad
-    </Link>
-  </div>
-</section>
-
-      <section className="section intro">
-        <h2>¿Quiénes somos?</h2>
-
-        <p>
-          Somos personas que prefieren hacer en vez de esperar el permiso.
-          Construimos, nos equivocamos, celebramos los aprendizajes y seguimos
-          adelante con ganas de movernos juntas.
-        </p>
-      </section>
-
-      <section className="section">
-        <h2>Lo que hacemos</h2>
-
-        <div className="grid">
-          <article className="card">
-            <h3>Creatividad</h3>
-            <p>
-              Diseño, branding, ilustración, ideas visuales y conceptos que
-              empiezan como juego y terminan tomando forma.
-            </p>
-          </article>
-
-          <article className="card">
-            <h3>Producción</h3>
-            <p>
-              Foto, video, contenido, eventos y experiencias que documentan lo
-              que pasa cuando la comunidad se mueve.
-            </p>
-          </article>
-
-          <article className="card">
-            <h3>Estrategia</h3>
-            <p>
-              Marketing, comunicación, medios, relaciones públicas y formas más
-              claras de contar lo que estamos construyendo.
-            </p>
-          </article>
-
-          <article className="card">
-            <h3>Comunidad</h3>
-            <p>
-              Personas, colaboraciones, talentos y proyectos que se conectan
-              desde la curiosidad, no desde la perfección.
-            </p>
-          </article>
+      <section className="home-hero">
+        <div className="container">
+          <p className="section-label">Adultxs Inexpertxs</p>
+          <h1>Toma la vida con la seriedad que jugabas de niñx.</h1>
+          <p className="lead">
+            Un espacio para quienes siguen creyendo que crecer no significa dejar de crear,
+            experimentar y equivocarse.
+          </p>
+          <div className="actions">
+            <Button to="/comunidad">Explorar comunidad</Button>
+            <Button to="/conocenos" variant="secondary">
+              Conócenos
+            </Button>
+          </div>
         </div>
       </section>
 
-      <section className="section featured">
-        <h2>Proyectos que nacen aquí</h2>
-
-        <p>
-          Aquí compartimos lo que hacemos mientras aprendemos. Los proyectos no
-          son el final, son la excusa para probar, cambiar y seguir creciendo.
-        </p>
-
-        <div className="projectList">
-          <Link to="/proyectos">VERDE</Link>
-          <Link to="/proyectos">Dinero en Acción</Link>
-          <Link to="/proyectos">La Redención</Link>
-          <Link to="/proyectos">Café Cien</Link>
+      <Section eyebrow="Qué somos" title="¿Qué es Adultxs Inexpertxs?">
+        <div className="editorial-grid three">
+          {whatWeDo.map((item, index) => (
+            <EditorialBlock
+              key={item.title}
+              index={String(index + 1).padStart(2, "0")}
+              title={item.title}
+              text={item.text}
+            />
+          ))}
         </div>
-      </section>
+      </Section>
 
-      <section className="section quote">
-        <h2>Nunca dejamos de ser inexpertxs.</h2>
-        <p>
-          Y tal vez ahí está el punto: seguir intentando, seguir jugando y seguir
-          construyendo aunque no tengamos todo resuelto.
-        </p>
-      </section>
+      <Section
+        eyebrow="Trayectoria"
+        title="10 años tomando proyectos"
+        intro="Llevamos más de diez años aprendiendo haciendo. Hemos participado en proyectos culturales, creativos, comerciales y comunitarios. Hoy todo ese aprendizaje vive dentro de Adultxs Inexpertxs."
+      />
 
-      <section className="section cta">
-        <h2>¿Quieres sumar?</h2>
+      <Section
+        eyebrow="Comunidad"
+        title="Un lugar para preguntar sin pena."
+        intro="Nos reunimos alrededor de conversaciones, recursos, colaboraciones y experiencias para recordar que nadie aprende solx."
+      >
+        <Button to="/comunidad" variant="secondary">
+          Entrar a comunidad
+        </Button>
+      </Section>
 
-        <p>
-          Si tienes una idea, un proyecto medio raro o simplemente ganas de
-          juntarte con personas que no esperan ser perfectas, aquí hay un lugar.
-        </p>
+      <Section
+        eyebrow="Merch"
+        title="Prendas para seguir intentando."
+        intro="No son productos para verse expertx. Son recordatorios portátiles de que seguimos aprendiendo."
+      >
+        <div className="product-grid">
+          {merchProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </Section>
 
-        <Link to="/contactanos" className="btnPrimary">
-          Escríbenos
-        </Link>
+      <section className="final-cta">
+        <div className="container">
+          <h2>Nunca dejamos de aprender. Sólo dejamos de intentarlo.</h2>
+          <Button to="/contactanos">Contactanos</Button>
+        </div>
       </section>
     </main>
   );
