@@ -16,7 +16,11 @@ export default function ProductDetail() {
     <main>
       <section className="product-detail-section">
         <div className="product-layout">
-          <ProductGallery images={product.images} productName={product.name} />
+          <ProductGallery
+            images={product.images}
+            productName={product.name}
+            variant={product.slug === "playera" ? "vertical" : "default"}
+          />
 
           <aside className="product-info">
             <p className="section-label">Merch / {product.category}</p>

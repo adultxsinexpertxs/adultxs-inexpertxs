@@ -29,6 +29,7 @@ const refugios = [
     links: {
       instagram: "https://www.instagram.com/verde_mx_/",
       facebook: "https://www.facebook.com/profile.php?id=61578070365086&ref=PROFILE_EDIT_xav_ig_profile_page_web#",
+      maps: "https://maps.app.goo.gl/9QzsHmQPvABYP3zN8",
     },
   },
   {
@@ -109,7 +110,7 @@ export default function Comunidad() {
                     </a>
                   ) : null}
                   {refugio.links.maps ? (
-                    <a href={refugio.links.maps} target="_blank" rel="noreferrer" aria-label={`Abrir ubicación de ${refugio.name} en Maps`}>
+                    <a href={refugio.links.maps} target="_blank" rel="noopener noreferrer" aria-label={`Abrir ubicación de ${refugio.name} en Maps`}>
                       <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
                         <path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z" />
                         <circle cx="12" cy="10" r="2.5" />

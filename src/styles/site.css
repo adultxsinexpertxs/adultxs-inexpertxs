@@ -945,6 +945,15 @@ h2 + .section-intro {
   transition: opacity 180ms ease;
 }
 
+.product-gallery-vertical {
+  aspect-ratio: 4 / 5;
+  background: #f3f3f3;
+}
+
+.product-gallery-vertical .product-gallery-frame {
+  padding: clamp(18px, 3vw, 44px);
+}
+
 .gallery-control {
   position: absolute;
   top: 50%;
