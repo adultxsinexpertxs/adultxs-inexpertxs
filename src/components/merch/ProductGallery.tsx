@@ -3,14 +3,9 @@ import { type KeyboardEvent, useState } from "react";
 type ProductGalleryProps = {
   images: string[];
   productName: string;
-  variant?: "default" | "vertical";
 };
 
-export default function ProductGallery({
-  images,
-  productName,
-  variant = "default",
-}: ProductGalleryProps) {
+export default function ProductGallery({ images, productName }: ProductGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const hasMultipleImages = images.length > 1;
   const activeImage = images[activeIndex];
@@ -41,7 +36,7 @@ export default function ProductGallery({
 
   return (
     <div
-      className={`product-gallery product-gallery-${variant}`}
+      className="product-gallery"
       tabIndex={hasMultipleImages ? 0 : undefined}
       onKeyDown={handleKeyDown}
       aria-label={`Galería de ${productName}`}
