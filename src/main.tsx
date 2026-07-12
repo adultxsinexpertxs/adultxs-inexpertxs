@@ -9,6 +9,7 @@ import AvisoPrivacidad from "./pages/aviso-privacidad";
 import Comunidad from "./pages/comunidad";
 import Conocenos from "./pages/conocenos";
 import Contactanos from "./pages/contactanos";
+import Credencial from "./pages/credencial";
 import Merch from "./pages/merch";
 import ProductDetail from "./pages/merch/ProductDetail";
 import Nosotrxs from "./pages/nosotrxs";
@@ -37,6 +38,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/contactanos" element={<Contactanos />} />
           <Route path="/contactanos.html" element={<Navigate to="/contactanos" replace />} />
           <Route path="/aviso-privacidad.html" element={<AvisoPrivacidad />} />
+          <Route path="/credencial.html" element={<Credencial />} />
           <Route path="/proyectos" element={<Navigate to="/nosotrxs" replace />} />
           <Route path="/proyectos.html" element={<Navigate to="/nosotrxs" replace />} />
           <Route path="/experiencias" element={<Navigate to="/comunidad" replace />} />

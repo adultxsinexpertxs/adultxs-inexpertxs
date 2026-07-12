@@ -42,7 +42,11 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
       aria-label={`Galería de ${productName}`}
     >
       <figure className="product-gallery-frame">
-        <img src={activeImage} alt={`${productName} imagen ${activeIndex + 1}`} />
+        <img
+          className="product-gallery-image"
+          src={activeImage}
+          alt={`${productName} imagen ${activeIndex + 1}`}
+        />
 
         {hasMultipleImages ? (
           <>
