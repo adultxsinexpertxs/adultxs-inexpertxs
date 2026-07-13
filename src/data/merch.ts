@@ -1,3 +1,8 @@
+export type MerchImage = {
+  src: string;
+  alt: string;
+};
+
 export type MerchProduct = {
   id: string;
   name: string;
@@ -7,9 +12,7 @@ export type MerchProduct = {
   details: string[];
   material: string;
   designStory: string;
-  images: string[];
-  frontImage: string;
-  backImage?: string;
+  images: MerchImage[];
   price?: string;
   status: string;
   availability: string;
@@ -29,9 +32,16 @@ export const merchProducts: MerchProduct[] = [
     material: "Algodón suave de uso diario.",
     designStory:
       "Nació como una frase para llevar puesta: una manera de avisar que seguimos intentando sin volvernos demasiado solemnes.",
-    images: ["/playera-frente.png", "/playera-vuelta.png"],
-    frontImage: "/playera-frente.png",
-    backImage: "/playera-vuelta.png",
+    images: [
+      {
+        src: "/images/merch/playera-frente.png",
+        alt: "Playera negra Adultxs Inexpertxs vista frontal",
+      },
+      {
+        src: "/images/merch/playera-vuelta.png",
+        alt: "Playera negra Adultxs Inexpertxs vista trasera",
+      },
+    ],
     status: "Agotado",
     availability: "Actualmente agotado.",
     sizes: ["XS", "S", "M", "L", "XL"],
@@ -48,9 +58,16 @@ export const merchProducts: MerchProduct[] = [
     material: "Mezcla de algodón con interior suave.",
     designStory:
       "La sudadera aparece para esos días en los que la adultez pesa, pero todavía queda energía para reunirse, hacer y jugar con una idea.",
-    images: ["/sudadera-frente.png", "/sudadera-vuelta.png"],
-    frontImage: "/sudadera-frente.png",
-    backImage: "/sudadera-vuelta.png",
+    images: [
+      {
+        src: "/images/merch/sudadera-frente.png",
+        alt: "Sudadera negra Adultxs Inexpertxs vista frontal",
+      },
+      {
+        src: "/images/merch/sudadera-vuelta.png",
+        alt: "Sudadera negra Adultxs Inexpertxs vista trasera",
+      },
+    ],
     status: "Agotado",
     availability: "Actualmente agotado.",
     sizes: ["XS", "S", "M", "L", "XL"],
@@ -67,9 +84,16 @@ export const merchProducts: MerchProduct[] = [
     material: "Textil estructurado con ajuste posterior.",
     designStory:
       "La gorra es un guiño pequeño: una señal para quienes prefieren no saberlo todo, pero sí seguir apareciendo.",
-    images: ["/gorra-frente.png", "/gorra-vuelta.png"],
-    frontImage: "/gorra-frente.png",
-    backImage: "/gorra-vuelta.png",
+    images: [
+      {
+        src: "/images/merch/gorra-frente.png",
+        alt: "Gorra negra Adultxs Inexpertxs vista frontal",
+      },
+      {
+        src: "/images/merch/gorra-vuelta.png",
+        alt: "Gorra negra Adultxs Inexpertxs vista trasera",
+      },
+    ],
     status: "Agotado",
     availability: "Actualmente agotado.",
     sizes: [],

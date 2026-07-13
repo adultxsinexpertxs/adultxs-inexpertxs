@@ -1,7 +1,8 @@
 import { type KeyboardEvent, useState } from "react";
+import type { MerchImage } from "../../data/merch";
 
 type ProductGalleryProps = {
-  images: string[];
+  images: MerchImage[];
   productName: string;
 };
 
@@ -44,8 +45,8 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
       <figure className="product-gallery-frame">
         <img
           className="product-gallery-image"
-          src={activeImage}
-          alt={`${productName} imagen ${activeIndex + 1}`}
+          src={activeImage.src}
+          alt={activeImage.alt}
         />
 
         {hasMultipleImages ? (

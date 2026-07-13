@@ -7,11 +7,13 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const frontImage = product.images[0];
+
   return (
     <article className="product-card">
       <Link to={`/merch/${product.slug}`} aria-label={`Ver producto ${product.name}`}>
         <figure>
-          <img src={product.frontImage} alt={`${product.name} frente`} />
+          <img src={frontImage.src} alt={frontImage.alt} />
         </figure>
         <div className="product-card-copy">
           <span>{product.status}</span>
