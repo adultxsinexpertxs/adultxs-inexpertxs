@@ -6,13 +6,13 @@ export default async function handler(req, res) {
   if (req.method === 'GET') return res.status(200).setHeader('Content-Type', 'text/html; charset=utf-8').send(PAGE);
   if (req.method !== 'POST') return res.status(405).setHeader('Allow', 'GET, POST').json({ok:false,error:'Método no permitido.'});
   const data = typeof req.body === 'string' ? parseBody(req.body) : req.body;
-  if (!data || typeof data.nombre !== 'string' || data.nombre.trim().length < 2 || data.nombre.length > 80 || !Number.isInteger(Number(data.edad)) || Number(data.edad) < 1 || Number(data.edad) > 120 || !['XS','S','M','L','XL','XXL'].includes(data.playera) || typeof data.duda !== 'string' || data.duda.trim().length < 5 || data.duda.length > 1000 || data.aceptoRegla !== true) {
-    return res.status(400).json({ok:false,error:'Revisa los cuatro campos y acepta la última regla.'});
+  if (!data || typeof data.nombre !== 'string' || data.nombre.trim().length < 2 || data.nombre.length > 80 || !Number.isInteger(Number(data.edad)) || Number(data.edad) < 1 || Number(data.edad) > 120 || !['XS','S','M','L','XL','XXL'].includes(data.playera) || typeof data.duda !== 'string' || data.duda.trim().length < 5 || data.duda.length > 1000 || data.aceptoRegla !== true || !validBirthDate(data.fechaNacimiento)) {
+    return res.status(400).json({ok:false,error:'Revisa los cinco campos y acepta la última regla.'});
   }
   try {
     const response = await fetch(SCRIPT_URL, {
       method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
-      body:JSON.stringify({nombre:data.nombre,edad:Number(data.edad),playera:data.playera,duda:data.duda,aceptoRegla:true}),
+      body:JSON.stringify({nombre:data.nombre,edad:Number(data.edad),playera:data.playera,duda:data.duda,fechaNacimiento:data.fechaNacimiento,aceptoRegla:true}),
       signal:AbortSignal.timeout(45000),
     });
     const result = await response.json();
@@ -21,6 +21,12 @@ export default async function handler(req, res) {
   } catch {
     return res.status(502).json({ok:false,error:'No pudimos confirmar el registro. Revisa tu conexión antes de volver a intentarlo.'});
   }
+}
+
+function validBirthDate(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value) || value < '1900-01-01') return false;
+  const date = new Date(value + 'T00:00:00Z');
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0,10) === value && value <= new Date().toLocaleDateString('en-CA', {timeZone:'America/Monterrey'});
 }
 
 function parseBody(body) { try { return JSON.parse(body); } catch { return null; } }
@@ -53,13 +59,15 @@ body:has(dialog[open]){overflow:hidden}#main-menu{position:fixed;inset:0 0 0 aut
 <main><section class="intro" id="club" aria-labelledby="welcome"><p class="eyebrow">UN CLUB PARA LXS QUE VAN IMPROVISANDO</p><h1 id="welcome">BIENVENIDO<br>AL CLUB.</h1>
 <div class="rules"><p>LA PRIMERA REGLA DE ESTE CLUB ES…<br>HABLA SOBRE EL CLUB DE LXS ADULTXS INEXPERTXS.</p><p>LA SEGUNDA REGLA ES…<br>SIEMPRE HABLA SOBRE EL CLUB DE LXS ADULTXS INEXPERTXS.</p><p>LA TERCERA REGLA DEL CLUB ES…<br>SI ES TU PRIMERA VEZ AQUÍ, DEBES COMPARTIR TU DUDA MÁS GRANDE SOBRE LA VIDA ADULTX.</p></div>
 <p class="closing">CRECER NO TRAÍA INSTRUCCIONES. ASÍ QUE ARMAMOS UN CLUB.</p></section>
-<section class="register" id="registro" aria-labelledby="join"><div id="form-content"><p class="eyebrow">NO NECESITAS TENERLO TODO RESUELTO.</p><h2 id="join">¿TE NOS UNES<br>O QUÉ?</h2><p class="lead">CUATRO DATOS. CERO PREGUNTAS SOBRE TU PLAN DE VIDA. LO DEMÁS LO APRENDEMOS EN EL CAMINO.</p>
-<form id="registration"><div class="fields"><div><label for="nombre">NOMBRE</label><input id="nombre" name="nombre" required minlength="2" maxlength="80" autocomplete="name" placeholder="TU NOMBRE DE CIVIL"></div><div class="pair"><div><label for="edad">EDAD</label><input id="edad" name="edad" type="number" required min="1" max="120" step="1" inputmode="numeric" placeholder="TUS AÑOS"></div><div><label for="playera">MEDIDA DE PLAYERA</label><select id="playera" name="playera" required><option value="">ELIGE TU TALLA</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div></div><div><label for="duda">TU DUDA MÁS GRANDE SOBRE LA VIDA ADULTX</label><textarea id="duda" name="duda" required minlength="5" maxlength="1000" placeholder="¿QUÉ ES ESO QUE NADIE TE EXPLICÓ SOBRE SER ADULTX?"></textarea></div></div><button class="submit" type="submit">SOY UN INEXPERTX <span aria-hidden="true">↗</span></button><p class="note">TUS DATOS SE GUARDAN EN EL REGISTRO DEL CLUB. <a href="/aviso-privacidad.html">AVISO DE PRIVACIDAD</a>.</p><p class="error" id="error" role="alert" hidden></p></form></div>
+<section class="register" id="registro" aria-labelledby="join"><div id="form-content"><p class="eyebrow">NO NECESITAS TENERLO TODO RESUELTO.</p><h2 id="join">¿TE NOS UNES<br>O QUÉ?</h2><p class="lead">CINCO DATOS. CERO PREGUNTAS SOBRE TU PLAN DE VIDA. LO DEMÁS LO APRENDEMOS EN EL CAMINO.</p>
+<form id="registration"><div class="fields"><div><label for="nombre">NOMBRE</label><input id="nombre" name="nombre" required minlength="2" maxlength="80" autocomplete="name" placeholder="TU NOMBRE DE CIVIL"></div><div><label for="fechaNacimiento">FECHA DE NACIMIENTO</label><input id="fechaNacimiento" name="fechaNacimiento" type="date" required min="1900-01-01" autocomplete="bday"></div><div class="pair"><div><label for="edad">EDAD</label><input id="edad" name="edad" type="number" required min="1" max="120" step="1" inputmode="numeric" placeholder="TUS AÑOS"></div><div><label for="playera">MEDIDA DE PLAYERA</label><select id="playera" name="playera" required><option value="">ELIGE TU TALLA</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></div></div><div><label for="duda">TU DUDA MÁS GRANDE SOBRE LA VIDA ADULTX</label><textarea id="duda" name="duda" required minlength="5" maxlength="1000" placeholder="¿QUÉ ES ESO QUE NADIE TE EXPLICÓ SOBRE SER ADULTX?"></textarea></div></div><button class="submit" type="submit">SOY UN INEXPERTX <span aria-hidden="true">↗</span></button><p class="note">TUS DATOS SE GUARDAN EN EL REGISTRO DEL CLUB. <a href="/aviso-privacidad.html">AVISO DE PRIVACIDAD</a>.</p><p class="error" id="error" role="alert" hidden></p></form></div>
 <div id="success" class="success" hidden><p class="eyebrow">YA ESTÁS DENTRO.</p><h2 tabindex="-1" id="success-title">YA ERES<br>DEL CLUB.</h2><p><span id="member"></span>, OFICIALMENTE ERES UNX ADULTX INEXPERTX.</p><a href="/comunidad">EXPLORAR LA COMUNIDAD ↗</a></div></section></main>
 <footer><a href="/aviso-privacidad.html">AVISO DE PRIVACIDAD</a><a href="/">CRECER NO TRAÍA INSTRUCCIONES.</a></footer>
 <dialog id="last-rule" aria-labelledby="last-title"><p class="eyebrow">ANTES DE ENTRAR…</p><h2 id="last-title">LA ÚLTIMA REGLA.</h2><p>COMPARTIRÁS CON LXS DEMÁS LO QUE SIGNIFICA SER UN ADULTX INEXPERTX.</p><p>TU DUDA, TUS TROPIEZOS, LO QUE APRENDISTE Y LO QUE TODAVÍA NO ENTIENDES. SIN FINGIR QUE YA TIENES LA VIDA RESUELTA.</p><label class="check"><input id="accept" type="checkbox">LE ENTRO. ACEPTO COMPARTIR MI EXPERIENCIA INEXPERTA CON EL CLUB.</label><button id="confirm" class="primary" type="button" disabled>ACEPTO. SOY INEXPERTX ↗</button><button id="cancel" class="secondary" type="button">ME DIO NERVIO, TODAVÍA NO</button></dialog>
 <script>
 const form=document.querySelector('#registration'),dialog=document.querySelector('#last-rule'),accept=document.querySelector('#accept'),confirmButton=document.querySelector('#confirm'),error=document.querySelector('#error');
+const birthdayInput=document.querySelector('#fechaNacimiento'),today=new Date();
+birthdayInput.max=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
 let sending=false;
 const menuButton=document.querySelector('.menu-button'),menu=document.querySelector('#main-menu');
 menuButton.addEventListener('click',()=>{menuButton.setAttribute('aria-expanded','true');menu.showModal()});
