@@ -1,0 +1,18 @@
+/* Vista previa editorial: no altera las hojas globales ni la rama main. */
+.red-preview .red-hero{background:#090909;color:#fff;padding:clamp(5rem,11vw,10rem) 0 5rem;}
+.red-preview .red-hero .section-label{color:#bdbdbd;letter-spacing:.14em;}
+.red-preview .red-hero h1{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-size:clamp(4.3rem,11vw,10.8rem);line-height:.88;letter-spacing:-.018em;text-transform:uppercase;max-width:1200px;margin:2.5rem 0 2rem;}
+.red-preview .red-hero h1 span{color:#bcbcbc;}
+.red-preview .red-intro{font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.55;max-width:650px;color:#dedede;}
+.red-preview .red-hero .actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.red-preview .red-hero-foot{margin-top:5rem;font-size:.75rem;letter-spacing:.18em;color:#aaa;}
+.red-preview .red-path-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#222;border:1px solid #222;}
+.red-preview .red-path{background:#fff;padding:clamp(1.5rem,4vw,4rem);display:flex;flex-direction:column;align-items:flex-start;gap:1rem;}
+.red-preview .red-index{font-size:.75rem;letter-spacing:.14em;color:#777;}
+.red-preview .red-path h3{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:.94;text-transform:uppercase;margin:1rem 0 0;}
+.red-preview .red-path p{font-size:1.05rem;line-height:1.65;max-width:480px;flex:1;}
+.red-preview .red-failure{background:#0b0b0b;color:#fff;padding:clamp(5rem,9vw,9rem) 0;}
+.red-preview .red-failure h2{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-size:clamp(4.5rem,10vw,10rem);line-height:.88;text-transform:uppercase;margin:2rem 0;}
+.red-preview .red-failure p:not(.section-label){font-size:1.15rem;line-height:1.6;max-width:650px;margin-bottom:2rem;}
+.red-preview .red-merch-link{margin-top:2rem;}
+@media(max-width:700px){.red-preview .red-path-grid{grid-template-columns:1fr}.red-preview .red-hero{padding-top:5rem}.red-preview .red-hero h1{font-size:clamp(3.5rem,14vw,6rem)}.red-preview .red-hero-foot{margin-top:3rem}}
