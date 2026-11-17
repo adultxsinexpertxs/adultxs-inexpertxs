@@ -1,4 +1,5 @@
 import ClubCredentialModal from "./components/ClubCredentialModal";
+import OriginalDropPopup from "./components/OriginalDropPopup";
 import Button from "./components/ui/Button";
 import EditorialBlock from "./components/ui/EditorialBlock";
 import ProductCard from "./components/merch/ProductCard";
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <main className="red-preview">
       <ClubCredentialModal />
+      <OriginalDropPopup />
       <section className="red-hero">
         <div className="container red-hero-inner">
           <p className="section-label">ADULTXS INEXPERTXS / UNA RED PARA SEGUIR INTENTANDO</p>
