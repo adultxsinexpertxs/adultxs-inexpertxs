@@ -45,3 +45,9 @@
 .drop-form .drop-primary{width:100%;}
 .drop-primary:disabled,.drop-close:disabled{opacity:.65;cursor:wait;}
 .drop-copy .drop-error{color:#fff!important;border:1px solid #fff;padding:9px;font-size:13px!important;}
+
+/* Fix: tarjetas claras dentro de la sección oscura. Evita texto blanco heredado. */
+.red-preview .red-path{color:#101010;}
+.red-preview .red-path h3,.red-preview .red-path p:not(.red-index){color:#101010;opacity:1;visibility:visible;}
+.red-preview .red-path .button-secondary{color:#101010;border-color:#101010;background:#fff;}
+.red-preview .red-path .button-secondary:hover,.red-preview .red-path .button-secondary:focus-visible{color:#fff;background:#101010;}
